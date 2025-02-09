@@ -1,0 +1,42 @@
+﻿@import '../../../../Styles/abstracts/_functions.scss';
+
+.example-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+::deep {
+    .custom-thumb {
+        background: #fff;
+        width: rem2(30px);
+        height: rem2(30px);
+    }
+
+    .custom-button {
+        padding: 0;
+        border: none;
+        background: #ccc;
+        width: rem2(52px);
+        height: rem2(22px);
+        border-radius: rem2(11px);
+    }
+
+    .custom-check {
+        .custom-thumb {
+            background: #ff6868;
+        }
+
+        .custom-button {
+            background: #ffcece;
+        }
+
+        .custom-button:hover .custom-thumb {
+            background: #ff6868;
+        }
+    }
+
+    .validation-message {
+        color: red;
+    }
+}

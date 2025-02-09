@@ -1,0 +1,57 @@
+﻿@import '../../../../Styles/abstracts/_functions.scss';
+@import '../../../../Styles/abstracts/_media-queries.scss';
+@import '../../../../Styles/abstracts/_bit-css-variables.scss';
+
+.example-box {
+    gap: 1rem;
+    display: flex;
+    width: fit-content;
+
+    @include sm {
+        flex-direction: column;
+    }
+}
+
+::deep {
+    .custom-class {
+        padding: 0.5rem;
+        border-radius: 0.125rem;
+        background-color: #d3d3d347;
+        border: 1px solid dodgerblue;
+    }
+
+    .custom-label {
+        font-weight: bold;
+        color: lightseagreen;
+    }
+
+    .custom-icon {
+        color: lightseagreen
+    }
+
+    .custom-box {
+        border-radius: 0.2rem;
+        border-color: lightseagreen;
+    }
+
+    .custom-checked .custom-icon {
+        color: white
+    }
+
+    .custom-checked:hover .custom-icon {
+        color: whitesmoke;
+    }
+
+    .custom-checked .custom-box {
+        background-color: lightseagreen;
+    }
+
+    .custom-checked:hover .custom-box {
+        border-color: mediumseagreen;
+    }
+
+    .validation-message {
+        font-size: 0.75rem;
+        color: $bit-color-error;
+    }
+}

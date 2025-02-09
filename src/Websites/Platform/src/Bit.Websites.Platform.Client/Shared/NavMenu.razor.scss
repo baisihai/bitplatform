@@ -1,0 +1,75 @@
+﻿@import '../Styles/abstracts/_vars.scss';
+@import '../Styles/abstracts/_colors.scss';
+@import '../Styles/abstracts/_functions.scss';
+@import '../Styles/abstracts/_media-queries.scss';
+@import '../Styles/abstracts/_bit-css-variables.scss';
+
+.nav-menu {
+    left: 0;
+    outline: 0;
+    z-index: 10;
+    display: flex;
+    flex: 1 0 auto;
+    flex-shrink: 0;
+    overflow-y: auto;
+    position: sticky;
+    flex-direction: column;
+    top: rem2($HeaderHeight);
+    width: rem2($NavMenuWidth);
+    max-width: rem2($NavMenuWidth);
+    height: calc(100vh - rem2($HeaderHeight));
+    background-color: $bit-color-background-primary;
+
+    @include lt-lg {
+        inset: 0;
+        height: 100vh;
+        z-index: 1200;
+        position: fixed;
+    }
+
+    @include sm {
+        border-radius: 0 rem2(10px) rem2(10px) 0;
+    }
+}
+
+.nav-menu--desktop {
+    display: flex;
+
+    @include lt-lg {
+        display: none;
+    }
+}
+
+.nav-menu--mobile {
+    display: none;
+
+    @include lt-lg {
+        display: block;
+    }
+}
+
+.nav-menu-shadow {
+    inset: 0;
+    z-index: 1101;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-box-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: rem2(24px) rem2(22px);
+}
+
+.nav-menu-list {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    height: calc(100% - #{rem2(89px)});
+    max-height: calc(100% - #{rem2(89px)});
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}

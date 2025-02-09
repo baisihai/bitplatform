@@ -1,0 +1,618 @@
+﻿@import "theme-variables.scss";
+
+//primary
+.bit-css-clr-pri {
+    color: $clr-pri;
+}
+
+.bit-css-clr-pri-dark {
+    color: $clr-pri-dark;
+}
+
+.bit-css-clr-pri-light {
+    color: $clr-pri-light;
+}
+
+.bit-css-clr-pri-text {
+    color: $clr-pri-text;
+}
+
+.bit-css-clr-pri-hover:hover {
+    color: $clr-pri-hover;
+}
+
+.bit-css-clr-pri-dark-hover:hover {
+    color: $clr-pri-dark-hover;
+}
+
+.bit-css-clr-pri-light-hover:hover {
+    color: $clr-pri-light-hover;
+}
+
+.bit-css-clr-pri-active:active {
+    color: $clr-pri-active;
+}
+
+.bit-css-clr-pri-dark-active:active {
+    color: $clr-pri-dark-active;
+}
+
+.bit-css-clr-pri-light-active:active {
+    color: $clr-pri-light-active;
+}
+
+//secondary
+.bit-css-clr-sec {
+    color: $clr-sec;
+}
+
+.bit-css-clr-sec-dark {
+    color: $clr-sec-dark;
+}
+
+.bit-css-clr-sec-light {
+    color: $clr-sec-light;
+}
+
+.bit-css-clr-sec-text {
+    color: $clr-sec-text;
+}
+
+.bit-css-clr-sec-hover:hover {
+    color: $clr-sec-hover;
+}
+
+.bit-css-clr-sec-dark-hover:hover {
+    color: $clr-sec-dark-hover;
+}
+
+.bit-css-clr-sec-light-hover:hover {
+    color: $clr-sec-light-hover;
+}
+
+.bit-css-clr-sec-active:active {
+    color: $clr-sec-active;
+}
+
+.bit-css-clr-sec-dark-active:active {
+    color: $clr-sec-dark-active;
+}
+
+.bit-css-clr-sec-light-active:active {
+    color: $clr-sec-light-active;
+}
+
+//foreground
+.bit-css-clr-fg-pri {
+    color: $clr-fg-pri;
+}
+
+.bit-css-clr-fg-sec {
+    color: $clr-fg-sec;
+}
+
+.bit-css-clr-fg-dis {
+    color: $clr-fg-dis;
+}
+
+.bit-css-clr-fg-pri-hover:hover {
+    color: $clr-fg-pri-hover;
+}
+
+.bit-css-clr-fg-sec-hover:hover {
+    color: $clr-fg-sec-hover;
+}
+
+.bit-css-clr-fg-pri-active:active {
+    color: $clr-fg-pri-active;
+}
+
+.bit-css-clr-fg-sec-active:active {
+    color: $clr-fg-sec-active;
+}
+
+//background
+.bit-css-clr-bg-pri {
+    background-color: $clr-bg-pri;
+}
+
+.bit-css-clr-bg-sec {
+    background-color: $clr-bg-sec;
+}
+
+.bit-css-clr-bg-dis {
+    background-color: $clr-bg-dis;
+}
+
+.bit-css-clr-bg-overlay {
+    background-color: $clr-bg-overlay;
+}
+
+.bit-css-clr-bg-pri-hover:hover {
+    color: $clr-bg-pri-hover;
+}
+
+.bit-css-clr-bg-sec-hover:hover {
+    color: $clr-bg-sec-hover;
+}
+
+.bit-css-clr-bg-pri-active:active {
+    color: $clr-bg-pri-active;
+}
+
+.bit-css-clr-bg-sec-active:active {
+    color: $clr-bg-sec-active;
+}
+
+//border
+.bit-css-clr-brd-pri {
+    border-color: $clr-brd-pri;
+}
+
+.bit-css-clr-brd-sec {
+    border-color: $clr-brd-sec;
+}
+
+.bit-css-clr-brd-dis {
+    border-color: $clr-brd-dis;
+}
+
+.bit-css-clr-brd-pri-hover:hover {
+    color: $clr-brd-pri-hover;
+}
+
+.bit-css-clr-brd-sec-hover:hover {
+    color: $clr-brd-sec-hover;
+}
+
+.bit-css-clr-brd-pri-active:active {
+    color: $clr-brd-pri-active;
+}
+
+.bit-css-clr-brd-sec-active:active {
+    color: $clr-brd-sec-active;
+}
+
+
+//info
+.bit-css-clr-inf {
+    color: $clr-inf;
+}
+
+.bit-css-clr-inf-dark {
+    color: $clr-inf-dark;
+}
+
+.bit-css-clr-inf-light {
+    color: $clr-inf-light;
+}
+
+.bit-css-clr-inf-text {
+    color: $clr-inf-text;
+}
+
+.bit-css-clr-inf-hover:hover {
+    color: $clr-inf-hover;
+}
+
+.bit-css-clr-inf-dark-hover:hover {
+    color: $clr-inf-dark-hover;
+}
+
+.bit-css-clr-inf-light-hover:hover {
+    color: $clr-inf-light-hover;
+}
+
+.bit-css-clr-inf-active:active {
+    color: $clr-inf-active;
+}
+
+.bit-css-clr-inf-dark-active:active {
+    color: $clr-inf-dark-active;
+}
+
+.bit-css-clr-inf-light-active:active {
+    color: $clr-inf-light-active;
+}
+
+//success
+.bit-css-clr-suc {
+    color: $clr-suc;
+}
+
+.bit-css-clr-suc-dark {
+    color: $clr-suc-dark;
+}
+
+.bit-css-clr-suc-light {
+    color: $clr-suc-light;
+}
+
+.bit-css-clr-suc-text {
+    color: $clr-suc-text;
+}
+
+.bit-css-clr-suc-hover:hover {
+    color: $clr-suc-hover;
+}
+
+.bit-css-clr-suc-dark-hover:hover {
+    color: $clr-suc-dark-hover;
+}
+
+.bit-css-clr-suc-light-hover:hover {
+    color: $clr-suc-light-hover;
+}
+
+.bit-css-clr-suc-active:active {
+    color: $clr-suc-active;
+}
+
+.bit-css-clr-suc-dark-active:active {
+    color: $clr-suc-dark-active;
+}
+
+.bit-css-clr-suc-light-active:active {
+    color: $clr-suc-light-active;
+}
+
+//warning
+.bit-css-clr-wrn {
+    color: $clr-wrn;
+}
+
+.bit-css-clr-wrn-dark {
+    color: $clr-wrn-dark;
+}
+
+.bit-css-clr-wrn-light {
+    color: $clr-wrn-light;
+}
+
+.bit-css-clr-wrn-text {
+    color: $clr-wrn-text;
+}
+
+.bit-css-clr-wrn-hover:hover {
+    color: $clr-wrn-hover;
+}
+
+.bit-css-clr-wrn-dark-hover:hover {
+    color: $clr-wrn-dark-hover;
+}
+
+.bit-css-clr-wrn-light-hover:hover {
+    color: $clr-wrn-light-hover;
+}
+
+.bit-css-clr-wrn-active:active {
+    color: $clr-wrn-active;
+}
+
+.bit-css-clr-wrn-dark-active:active {
+    color: $clr-wrn-dark-active;
+}
+
+.bit-css-clr-wrn-light-active:active {
+    color: $clr-wrn-light-active;
+}
+
+//severe-warning
+.bit-css-clr-swr {
+    color: $clr-swr;
+}
+
+.bit-css-clr-swr-dark {
+    color: $clr-swr-dark;
+}
+
+.bit-css-clr-swr-light {
+    color: $clr-swr-light;
+}
+
+.bit-css-clr-swr-text {
+    color: $clr-swr-text;
+}
+
+.bit-css-clr-swr-hover:hover {
+    color: $clr-swr-hover;
+}
+
+.bit-css-clr-swr-dark-hover:hover {
+    color: $clr-swr-dark-hover;
+}
+
+.bit-css-clr-swr-light-hover:hover {
+    color: $clr-swr-light-hover;
+}
+
+.bit-css-clr-swr-active:active {
+    color: $clr-swr-active;
+}
+
+.bit-css-clr-swr-dark-active:active {
+    color: $clr-swr-dark-active;
+}
+
+.bit-css-clr-swr-light-active:active {
+    color: $clr-swr-light-active;
+}
+
+//error
+.bit-css-clr-err {
+    color: $clr-err;
+}
+
+.bit-css-clr-err-dark {
+    color: $clr-err-dark;
+}
+
+.bit-css-clr-err-light {
+    color: $clr-err-light;
+}
+
+.bit-css-clr-err-text {
+    color: $clr-err-text;
+}
+
+.bit-css-clr-err-hover:hover {
+    color: $clr-err-hover;
+}
+
+.bit-css-clr-err-dark-hover:hover {
+    color: $clr-err-dark-hover;
+}
+
+.bit-css-clr-err-light-hover:hover {
+    color: $clr-err-light-hover;
+}
+
+.bit-css-clr-err-active:active {
+    color: $clr-err-active;
+}
+
+.bit-css-clr-err-dark-active:active {
+    color: $clr-err-dark-active;
+}
+
+.bit-css-clr-err-light-active:active {
+    color: $clr-err-light-active;
+}
+
+//required
+.bit-css-clr-req {
+    color: $clr-req;
+}
+
+
+//neutrals
+.bit-css-clr-ntr-white {
+    color: $clr-ntr-white;
+}
+
+.bit-css-clr-ntr-black {
+    color: $clr-ntr-black;
+}
+
+.bit-css-clr-ntr-gray10 {
+    color: $clr-ntr-gray10;
+}
+
+.bit-css-clr-ntr-gray20 {
+    color: $clr-ntr-gray20;
+}
+
+.bit-css-clr-ntr-gray30 {
+    color: $clr-ntr-gray30;
+}
+
+.bit-css-clr-ntr-gray40 {
+    color: $clr-ntr-gray40;
+}
+
+.bit-css-clr-ntr-gray50 {
+    color: $clr-ntr-gray50;
+}
+
+.bit-css-clr-ntr-gray60 {
+    color: $clr-ntr-gray60;
+}
+
+.bit-css-clr-ntr-gray70 {
+    color: $clr-ntr-gray70;
+}
+
+.bit-css-clr-ntr-gray80 {
+    color: $clr-ntr-gray80;
+}
+
+.bit-css-clr-ntr-gray90 {
+    color: $clr-ntr-gray90;
+}
+
+.bit-css-clr-ntr-gray100 {
+    color: $clr-ntr-gray100;
+}
+
+.bit-css-clr-ntr-gray110 {
+    color: $clr-ntr-gray110;
+}
+
+.bit-css-clr-ntr-gray120 {
+    color: $clr-ntr-gray120;
+}
+
+.bit-css-clr-ntr-gray130 {
+    color: $clr-ntr-gray130;
+}
+
+.bit-css-clr-ntr-gray140 {
+    color: $clr-ntr-gray140;
+}
+
+.bit-css-clr-ntr-gray150 {
+    color: $clr-ntr-gray150;
+}
+
+.bit-css-clr-ntr-gray160 {
+    color: $clr-ntr-gray160;
+}
+
+.bit-css-clr-ntr-gray170 {
+    color: $clr-ntr-gray170;
+}
+
+.bit-css-clr-ntr-gray180 {
+    color: $clr-ntr-gray180;
+}
+
+.bit-css-clr-ntr-gray190 {
+    color: $clr-ntr-gray190;
+}
+
+.bit-css-clr-ntr-gray200 {
+    color: $clr-ntr-gray200;
+}
+
+.bit-css-clr-ntr-gray210 {
+    color: $clr-ntr-gray210;
+}
+
+.bit-css-clr-ntr-gray220 {
+    color: $clr-ntr-gray220;
+}
+
+//shadows
+.bit-shd-cal {
+    box-shadow: $box-shadow-callout;
+}
+
+.bit-shd-1 {
+    box-shadow: $box-shadow-1;
+}
+
+.bit-shd-2 {
+    box-shadow: $box-shadow-2;
+}
+
+.bit-shd-3 {
+    box-shadow: $box-shadow-3;
+}
+
+.bit-shd-4 {
+    box-shadow: $box-shadow-4;
+}
+
+.bit-shd-5 {
+    box-shadow: $box-shadow-5;
+}
+
+.bit-shd-6 {
+    box-shadow: $box-shadow-6;
+}
+
+.bit-shd-7 {
+    box-shadow: $box-shadow-7;
+}
+
+.bit-shd-8 {
+    box-shadow: $box-shadow-8;
+}
+
+.bit-shd-9 {
+    box-shadow: $box-shadow-9;
+}
+
+.bit-shd-10 {
+    box-shadow: $box-shadow-10;
+}
+
+.bit-shd-11 {
+    box-shadow: $box-shadow-11;
+}
+
+.bit-shd-12 {
+    box-shadow: $box-shadow-12;
+}
+
+.bit-shd-13 {
+    box-shadow: $box-shadow-13;
+}
+
+.bit-shd-14 {
+    box-shadow: $box-shadow-14;
+}
+
+.bit-shd-15 {
+    box-shadow: $box-shadow-15;
+}
+
+.bit-shd-16 {
+    box-shadow: $box-shadow-16;
+}
+
+.bit-shd-17 {
+    box-shadow: $box-shadow-17;
+}
+
+.bit-shd-18 {
+    box-shadow: $box-shadow-18;
+}
+
+.bit-shd-19 {
+    box-shadow: $box-shadow-19;
+}
+
+.bit-shd-20 {
+    box-shadow: $box-shadow-20;
+}
+
+.bit-shd-21 {
+    box-shadow: $box-shadow-21;
+}
+
+.bit-shd-22 {
+    box-shadow: $box-shadow-22;
+}
+
+.bit-shd-23 {
+    box-shadow: $box-shadow-23;
+}
+
+.bit-shd-24 {
+    box-shadow: $box-shadow-24;
+}
+
+//z-index
+.bit-zin-snackbar {
+    z-index: $zindex-snackbar;
+}
+
+.bit-zin-modal {
+    z-index: $zindex-modal;
+}
+
+.bit-zin-callout {
+    z-index: $zindex-callout;
+}
+
+.bit-zin-overlay {
+    z-index: $zindex-overlay;
+}
+
+.bit-zin-base {
+    z-index: $zindex-base;
+}
+
+//shape
+.bit-shp-brd-radius {
+    border-radius: $shp-border-radius;
+}
+
+.bit-shp-brd-width {
+    border-width: $shp-border-width;
+}
+
+.bit-shp-brd-style {
+    border-style: $shp-border-style;
+}

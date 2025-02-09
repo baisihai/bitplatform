@@ -1,0 +1,112 @@
+﻿@import "../../../Styles/functions.scss";
+
+.bit-spr {
+    position: relative;
+    --bit-spr-bg: #{$clr-bg-pri};
+    --bit-spr-brd: #{$clr-brd-sec};
+}
+
+.bit-spr-cnt {
+    position: relative;
+    color: $clr-fg-pri;
+    display: inline-block;
+    background: var(--bit-spr-bg);
+}
+
+.bit-spr-hrz {
+    width: 100%;
+    display: block;
+    padding: spacing(0.5) 0;
+
+    &::before {
+        content: "";
+        display: block;
+        inset: 50% 0 0;
+        position: absolute;
+        height: $shp-border-width;
+        background-color: var(--bit-spr-brd);
+    }
+
+    .bit-spr-cnt {
+        padding: 0 spacing(1.5);
+    }
+
+    &.bit-spr-ctr {
+        text-align: center;
+    }
+
+    &.bit-spr-srt {
+        text-align: start;
+    }
+
+    &.bit-spr-end {
+        text-align: end;
+    }
+}
+
+.bit-spr-vrt {
+    z-index: 1;
+    height: inherit;
+    display: table-cell;
+    padding: 0 spacing(0.5);
+
+    &::after {
+        content: "";
+        z-index: -1;
+        display: block;
+        inset: 0 0 0 50%;
+        position: absolute;
+        width: $shp-border-width;
+        background-color: var(--bit-spr-brd);
+    }
+
+    .bit-spr-cnt {
+        padding: spacing(1.5) 0;
+    }
+
+    &.bit-spr-ctr {
+        vertical-align: middle;
+    }
+
+    &.bit-spr-srt {
+        vertical-align: top;
+    }
+
+    &.bit-spr-end {
+        vertical-align: bottom;
+    }
+}
+
+
+.bit-spr-pbg {
+    --bit-spr-bg: #{$clr-bg-pri};
+}
+
+.bit-spr-sbg {
+    --bit-spr-bg: #{$clr-bg-sec};
+}
+
+.bit-spr-tbg {
+    --bit-spr-bg: #{$clr-bg-ter};
+}
+
+.bit-spr-rbg {
+    --bit-spr-bg: transparent;
+}
+
+
+.bit-spr-pbr {
+    --bit-spr-brd: #{$clr-brd-pri};
+}
+
+.bit-spr-sbr {
+    --bit-spr-brd: #{$clr-brd-sec};
+}
+
+.bit-spr-tbr {
+    --bit-spr-brd: #{$clr-brd-ter};
+}
+
+.bit-spr-rbr {
+    --bit-spr-brd: transparent;
+}

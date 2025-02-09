@@ -1,0 +1,28 @@
+﻿::deep {
+    .custom-class {
+        margin-left: 1rem;
+        border-radius: 0.125rem;
+        box-shadow: aqua 0 0 0.5rem;
+        background-color: #00ffff7d;
+    }
+
+    .custom-root {
+        margin-left: 1rem;
+    }
+
+    .custom-button {
+        color: seagreen;
+        border-radius: 50%;
+        border-color: seagreen;
+    }
+
+    .custom-button:hover {
+        color: white;
+        background-color: mediumseagreen;
+    }
+
+    .custom-selected-button {
+        color: white;
+        background-color: seagreen;
+    }
+}

@@ -1,0 +1,39 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+<div @ref="RootElement" @attributes="HtmlAttributes" @onpointerdown:preventDefault @onpointerup="HandlePointerUp" @onpointermove="HandlePointerMove" @onpointerdown="HandlePointerDown"
+     id="@_Id"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@base.Dir?.ToString().ToLower()">
+
+    <div @ref="_swiper"
+         class="bit-swp-cnt"
+         style="@_directionStyle">
+        <CascadingValue Value="this" IsFixed="true">
+            @ChildContent
+        </CascadingValue>
+    </div>
+
+    @if (HideNextPrev is false)
+    {
+        <div class="bit-swp-rbt" @onclick="async() => await Go(true)" style="@_rightButtonStyle" @onpointerdown:stopPropagation>
+            <i class="bit-icon bit-icon--ChevronRight" />
+        </div>
+
+        <div class="bit-swp-lbt" @onclick="async () => await Go(false)" style="@_leftButtonStyle" @onpointerdown:stopPropagation>
+            <i class="bit-swp-lbi bit-icon bit-icon--ChevronRight" />
+        </div>
+    }
+
+    @*@if (HideDots is false)
+    {
+        <div class="bit-swp-dot" style="@_directionStyle">
+            @for (int i = 0; i < _pagesCount; i++)
+            {
+                int index = i;
+                <div class="@(_currentPage == index ? " current" : null)" @onclick="(() => GotoPage(index))"></div>
+            }
+        </div>
+    }*@
+</div>

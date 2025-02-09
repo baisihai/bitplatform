@@ -1,0 +1,72 @@
+﻿@import "../../../Styles/functions.scss";
+
+.bit-pnl {
+    font-weight: 400;
+    font-size: spacing(2);
+    z-index: $zindex-modal;
+    font-family: $tg-font-family;
+    --bit-pnl-transform-factor: 1;
+
+    &.bit-rtl {
+        --bit-pnl-transform-factor: -1;
+    }
+}
+
+.bit-pnl-ovl {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: $zindex-overlay;
+}
+
+.bit-pnl-cnt {
+    opacity: 0;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: $zindex-callout;
+    background-color: $clr-bg-pri;
+    box-shadow: $box-shadow-callout;
+    transition: transform 200ms ease-out, opacity 100ms ease-in;
+}
+
+.bit-pnl-start {
+    height: 100%;
+    max-width: 85%;
+    inset-block: 0;
+    max-height: 100%;
+    width: fit-content;
+    inset-inline-start: 0;
+    transform: translateX(calc(var(--bit-pnl-transform-factor) * -100%));
+}
+
+.bit-pnl-end {
+    height: 100%;
+    max-width: 85%;
+    inset-block: 0;
+    max-height: 100%;
+    width: fit-content;
+    inset-inline-end: 0;
+    transform: translateX(calc(var(--bit-pnl-transform-factor) * 100%));
+}
+
+.bit-pnl-top {
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 85%;
+    inset-inline: 0;
+    height: fit-content;
+    transform: translateY(-100%);
+}
+
+.bit-pnl-bottom {
+    bottom: 0;
+    top: unset;
+    width: 100%;
+    max-width: 100%;
+    max-height: 85%;
+    inset-inline: 0;
+    height: fit-content;
+    transform: translateY(100%);
+}

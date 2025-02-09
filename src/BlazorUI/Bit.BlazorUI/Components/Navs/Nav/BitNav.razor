@@ -1,0 +1,28 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+@typeparam TItem
+
+<CascadingValue Value="this" IsFixed="true">
+    <div style="display:none" hidden>
+        @(Options ?? ChildContent)
+    </div>
+</CascadingValue>
+
+<nav @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     role="navigation"
+     aria-label="@AriaLabel"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+
+    <ul role="list">
+        <CascadingValue Value="this" IsFixed="true">
+            @foreach (var (item, idx) in _items.Select((item, idx) => (item, idx)))
+            {
+                var key = GetItemKey(item, idx.ToString());
+                <_BitNavChild @key="@key" Key="@key" Item="item" Depth="0" />
+            }
+        </CascadingValue>
+    </ul>
+</nav>

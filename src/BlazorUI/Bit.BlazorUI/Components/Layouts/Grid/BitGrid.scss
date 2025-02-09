@@ -1,0 +1,25 @@
+﻿@import "../../../Styles/functions.scss";
+@import "../../../Styles/media-queries.scss";
+
+.bit-grd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.bit-grd-itm {
+    flex-basis: calc((100% / var(--columns) * var(--span)) - var(--spacing));
+
+    $breakpoints: ( 'xs': $brk-sm-min, 'sm': $brk-md-min, 'md': $brk-lg-min, 'lg': $brk-xl-min, 'xl': $brk-xxl-min );
+
+    @each $name, $breakpoint in $breakpoints {
+        @media (min-width: $breakpoint) {
+            --#{$name}: var(--span);
+            --columns-#{$name}: var(--columns);
+            flex-basis: calc((100% / var(--columns-#{$name}) * var(--#{$name})) - var(--spacing));
+        }
+    }
+}

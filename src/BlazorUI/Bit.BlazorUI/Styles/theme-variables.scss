@@ -1,0 +1,332 @@
+﻿/*-------- Colors --------*/
+//primary
+$clr-pri: var(--bit-clr-pri);
+$clr-pri-hover: var(--bit-clr-pri-hover);
+$clr-pri-active: var(--bit-clr-pri-active);
+$clr-pri-dark: var(--bit-clr-pri-dark);
+$clr-pri-dark-hover: var(--bit-clr-pri-dark-hover);
+$clr-pri-dark-active: var(--bit-clr-pri-dark-active);
+$clr-pri-light: var(--bit-clr-pri-light);
+$clr-pri-light-hover: var(--bit-clr-pri-light-hover);
+$clr-pri-light-active: var(--bit-clr-pri-light-active);
+$clr-pri-text: var(--bit-clr-pri-text);
+
+//secondary
+$clr-sec: var(--bit-clr-sec);
+$clr-sec-hover: var(--bit-clr-sec-hover);
+$clr-sec-active: var(--bit-clr-sec-active);
+$clr-sec-dark: var(--bit-clr-sec-dark);
+$clr-sec-dark-hover: var(--bit-clr-sec-dark-hover);
+$clr-sec-dark-active: var(--bit-clr-sec-dark-active);
+$clr-sec-light: var(--bit-clr-sec-light);
+$clr-sec-light-hover: var(--bit-clr-sec-light-hover);
+$clr-sec-light-active: var(--bit-clr-sec-light-active);
+$clr-sec-text: var(--bit-clr-sec-text);
+
+//tertiary
+$clr-ter: var(--bit-clr-ter);
+$clr-ter-hover: var(--bit-clr-ter-hover);
+$clr-ter-active: var(--bit-clr-ter-active);
+$clr-ter-dark: var(--bit-clr-ter-dark);
+$clr-ter-dark-hover: var(--bit-clr-ter-dark-hover);
+$clr-ter-dark-active: var(--bit-clr-ter-dark-active);
+$clr-ter-light: var(--bit-clr-ter-light);
+$clr-ter-light-hover: var(--bit-clr-ter-light-hover);
+$clr-ter-light-active: var(--bit-clr-ter-light-active);
+$clr-ter-text: var(--bit-clr-ter-text);
+
+//info
+$clr-inf: var(--bit-clr-inf);
+$clr-inf-hover: var(--bit-clr-inf-hover);
+$clr-inf-active: var(--bit-clr-inf-active);
+$clr-inf-dark: var(--bit-clr-inf-dark);
+$clr-inf-dark-hover: var(--bit-clr-inf-dark-hover);
+$clr-inf-dark-active: var(--bit-clr-inf-dark-active);
+$clr-inf-light: var(--bit-clr-inf-light);
+$clr-inf-light-hover: var(--bit-clr-inf-light-hover);
+$clr-inf-light-active: var(--bit-clr-inf-light-active);
+$clr-inf-text: var(--bit-clr-inf-text);
+
+//success
+$clr-suc: var(--bit-clr-suc);
+$clr-suc-hover: var(--bit-clr-suc-hover);
+$clr-suc-active: var(--bit-clr-suc-active);
+$clr-suc-dark: var(--bit-clr-suc-dark);
+$clr-suc-dark-hover: var(--bit-clr-suc-dark-hover);
+$clr-suc-dark-active: var(--bit-clr-suc-dark-active);
+$clr-suc-light: var(--bit-clr-suc-light);
+$clr-suc-light-hover: var(--bit-clr-suc-light-hover);
+$clr-suc-light-active: var(--bit-clr-suc-light-active);
+$clr-suc-text: var(--bit-clr-suc-text);
+
+//warning
+$clr-wrn: var(--bit-clr-wrn);
+$clr-wrn-hover: var(--bit-clr-wrn-hover);
+$clr-wrn-active: var(--bit-clr-wrn-active);
+$clr-wrn-dark: var(--bit-clr-wrn-dark);
+$clr-wrn-dark-hover: var(--bit-clr-wrn-dark-hover);
+$clr-wrn-dark-active: var(--bit-clr-wrn-dark-active);
+$clr-wrn-light: var(--bit-clr-wrn-light);
+$clr-wrn-light-hover: var(--bit-clr-wrn-light-hover);
+$clr-wrn-light-active: var(--bit-clr-wrn-light-active);
+$clr-wrn-text: var(--bit-clr-wrn-text);
+
+//severe-warning
+$clr-swr: var(--bit-clr-swr);
+$clr-swr-hover: var(--bit-clr-swr-hover);
+$clr-swr-active: var(--bit-clr-swr-active);
+$clr-swr-dark: var(--bit-clr-swr-dark);
+$clr-swr-dark-hover: var(--bit-clr-swr-dark-hover);
+$clr-swr-dark-active: var(--bit-clr-swr-dark-active);
+$clr-swr-light: var(--bit-clr-swr-light);
+$clr-swr-light-hover: var(--bit-clr-swr-light-hover);
+$clr-swr-light-active: var(--bit-clr-swr-light-active);
+$clr-swr-text: var(--bit-clr-swr-text);
+
+//error
+$clr-err: var(--bit-clr-err);
+$clr-err-hover: var(--bit-clr-err-hover);
+$clr-err-active: var(--bit-clr-err-active);
+$clr-err-dark: var(--bit-clr-err-dark);
+$clr-err-dark-hover: var(--bit-clr-err-dark-hover);
+$clr-err-dark-active: var(--bit-clr-err-dark-active);
+$clr-err-light: var(--bit-clr-err-light);
+$clr-err-light-hover: var(--bit-clr-err-light-hover);
+$clr-err-light-active: var(--bit-clr-err-light-active);
+$clr-err-text: var(--bit-clr-err-text);
+
+//foreground
+$clr-fg-pri: var(--bit-clr-fg-pri);
+$clr-fg-pri-hover: var(--bit-clr-fg-pri-hover);
+$clr-fg-pri-active: var(--bit-clr-fg-pri-active);
+$clr-fg-sec: var(--bit-clr-fg-sec);
+$clr-fg-sec-hover: var(--bit-clr-fg-sec-hover);
+$clr-fg-sec-active: var(--bit-clr-fg-sec-active);
+$clr-fg-ter: var(--bit-clr-fg-ter);
+$clr-fg-ter-hover: var(--bit-clr-fg-ter-hover);
+$clr-fg-ter-active: var(--bit-clr-fg-ter-active);
+$clr-fg-dis: var(--bit-clr-fg-dis);
+
+//backgrounds
+$clr-bg-pri: var(--bit-clr-bg-pri);
+$clr-bg-pri-hover: var(--bit-clr-bg-pri-hover);
+$clr-bg-pri-active: var(--bit-clr-bg-pri-active);
+$clr-bg-sec: var(--bit-clr-bg-sec);
+$clr-bg-sec-hover: var(--bit-clr-bg-sec-hover);
+$clr-bg-sec-active: var(--bit-clr-bg-sec-active);
+$clr-bg-ter: var(--bit-clr-bg-ter);
+$clr-bg-ter-hover: var(--bit-clr-bg-ter-hover);
+$clr-bg-ter-active: var(--bit-clr-bg-ter-active);
+$clr-bg-dis: var(--bit-clr-bg-dis);
+$clr-bg-overlay: var(--bit-clr-bg-overlay);
+
+//borders
+$clr-brd-pri: var(--bit-clr-brd-pri);
+$clr-brd-pri-hover: var(--bit-clr-brd-pri-hover);
+$clr-brd-pri-active: var(--bit-clr-brd-pri-active);
+$clr-brd-sec: var(--bit-clr-brd-sec);
+$clr-brd-sec-hover: var(--bit-clr-brd-sec-hover);
+$clr-brd-sec-active: var(--bit-clr-brd-sec-active);
+$clr-brd-ter: var(--bit-clr-brd-ter);
+$clr-brd-ter-hover: var(--bit-clr-brd-ter-hover);
+$clr-brd-ter-active: var(--bit-clr-brd-ter-active);
+$clr-brd-dis: var(--bit-clr-brd-dis);
+
+//required
+$clr-req: var(--bit-clr-req);
+
+//neutrals
+$clr-ntr-white: var(--bit-clr-ntr-white);
+$clr-ntr-black: var(--bit-clr-ntr-black);
+$clr-ntr-gray10: var(--bit-clr-ntr-gray10);
+$clr-ntr-gray20: var(--bit-clr-ntr-gray20);
+$clr-ntr-gray30: var(--bit-clr-ntr-gray30);
+$clr-ntr-gray40: var(--bit-clr-ntr-gray40);
+$clr-ntr-gray50: var(--bit-clr-ntr-gray50);
+$clr-ntr-gray60: var(--bit-clr-ntr-gray60);
+$clr-ntr-gray70: var(--bit-clr-ntr-gray70);
+$clr-ntr-gray80: var(--bit-clr-ntr-gray80);
+$clr-ntr-gray90: var(--bit-clr-ntr-gray90);
+$clr-ntr-gray100: var(--bit-clr-ntr-gray100);
+$clr-ntr-gray110: var(--bit-clr-ntr-gray110);
+$clr-ntr-gray120: var(--bit-clr-ntr-gray120);
+$clr-ntr-gray130: var(--bit-clr-ntr-gray130);
+$clr-ntr-gray140: var(--bit-clr-ntr-gray140);
+$clr-ntr-gray150: var(--bit-clr-ntr-gray150);
+$clr-ntr-gray160: var(--bit-clr-ntr-gray160);
+$clr-ntr-gray170: var(--bit-clr-ntr-gray170);
+$clr-ntr-gray180: var(--bit-clr-ntr-gray180);
+$clr-ntr-gray190: var(--bit-clr-ntr-gray190);
+$clr-ntr-gray200: var(--bit-clr-ntr-gray200);
+$clr-ntr-gray210: var(--bit-clr-ntr-gray210);
+$clr-ntr-gray220: var(--bit-clr-ntr-gray220);
+
+//shadows-callout
+$box-shadow-callout: var(--bit-shd-cal);
+$box-shadow-callout2: var(--bit-shd-cal2);
+
+//shadow sizes
+$box-shadow-sm: var(--bit-shd-sm);
+$box-shadow-nm: var(--bit-shd-nm);
+$box-shadow-md: var(--bit-shd-md);
+$box-shadow-lg: var(--bit-shd-lg);
+$box-shadow-xl: var(--bit-shd-xl);
+$box-shadow-2xl: var(--bit-shd-2xl);
+$box-shadow-inner: var(--bit-shd-inner);
+
+//shadows
+$box-shadow-1: var(--bit-shd-1);
+$box-shadow-2: var(--bit-shd-2);
+$box-shadow-3: var(--bit-shd-3);
+$box-shadow-4: var(--bit-shd-4);
+$box-shadow-5: var(--bit-shd-5);
+$box-shadow-6: var(--bit-shd-6);
+$box-shadow-7: var(--bit-shd-7);
+$box-shadow-8: var(--bit-shd-8);
+$box-shadow-9: var(--bit-shd-9);
+$box-shadow-10: var(--bit-shd-10);
+$box-shadow-11: var(--bit-shd-11);
+$box-shadow-12: var(--bit-shd-12);
+$box-shadow-13: var(--bit-shd-13);
+$box-shadow-14: var(--bit-shd-14);
+$box-shadow-15: var(--bit-shd-15);
+$box-shadow-16: var(--bit-shd-16);
+$box-shadow-17: var(--bit-shd-17);
+$box-shadow-18: var(--bit-shd-18);
+$box-shadow-19: var(--bit-shd-19);
+$box-shadow-20: var(--bit-shd-20);
+$box-shadow-21: var(--bit-shd-21);
+$box-shadow-22: var(--bit-shd-22);
+$box-shadow-23: var(--bit-shd-23);
+$box-shadow-24: var(--bit-shd-24);
+
+//spacing
+$spacing-scaling-factor: var(--bit-spa-scaling-factor);
+
+//z-index
+$zindex-snackbar: var(--bit-zin-snackbar);
+$zindex-modal: var(--bit-zin-modal);
+$zindex-callout: var(--bit-zin-callout);
+$zindex-overlay: var(--bit-zin-overlay);
+$zindex-base: var(--bit-zin-base);
+
+//shape
+$shp-border-radius: var(--bit-shp-brd-radius);
+$shp-border-width: var(--bit-shp-brd-width);
+$shp-border-style: var(--bit-shp-brd-style);
+
+/*---- Typography ----*/
+$tg-font-family: var(--bit-tpg-font-family);
+$tg-font-weight: var(--bit-tpg-font-weight);
+$tg-line-height: var(--bit-tpg-line-height);
+$tg-gutter-size: var(--bit-tpg-gutter-size);
+
+// h1
+$tg-h1-margin: var(--bit-tpg-h1-margin);
+$tg-h1-font-weight: var(--bit-tpg-h1-font-weight);
+$tg-h1-font-size: var(--bit-tpg-h1-font-size);
+$tg-h1-line-height: var(--bit-tpg-h1-line-height);
+$tg-h1-letter-spacing: var(--bit-tpg-h1-letter-spacing);
+
+// h2
+$tg-h2-margin: var(--bit-tpg-h2-margin);
+$tg-h2-font-weight: var(--bit-tpg-h2-font-weight);
+$tg-h2-font-size: var(--bit-tpg-h2-font-size);
+$tg-h2-line-height: var(--bit-tpg-h2-line-height);
+$tg-h2-letter-spacing: var(--bit-tpg-h2-letter-spacing);
+
+// h3
+$tg-h3-margin: var(--bit-tpg-h3-margin);
+$tg-h3-font-weight: var(--bit-tpg-h3-font-weight);
+$tg-h3-font-size: var(--bit-tpg-h3-font-size);
+$tg-h3-line-height: var(--bit-tpg-h3-line-height);
+$tg-h3-letter-spacing: var(--bit-tpg-h3-letter-spacing);
+
+// h4
+$tg-h4-margin: var(--bit-tpg-h4-margin);
+$tg-h4-font-weight: var(--bit-tpg-h4-font-weight);
+$tg-h4-font-size: var(--bit-tpg-h4-font-size);
+$tg-h4-line-height: var(--bit-tpg-h4-line-height);
+$tg-h4-letter-spacing: var(--bit-tpg-h4-letter-spacing);
+
+// h5
+$tg-h5-margin: var(--bit-tpg-h5-margin);
+$tg-h5-font-weight: var(--bit-tpg-h5-font-weight);
+$tg-h5-font-size: var(--bit-tpg-h5-font-size);
+$tg-h5-line-height: var(--bit-tpg-h5-line-height);
+$tg-h5-letter-spacing: var(--bit-tpg-h5-letter-spacing);
+
+// h6
+$tg-h6-margin: var(--bit-tpg-h6-margin);
+$tg-h6-font-weight: var(--bit-tpg-h6-font-weight);
+$tg-h6-font-size: var(--bit-tpg-h6-font-size);
+$tg-h6-line-height: var(--bit-tpg-h6-line-height);
+$tg-h6-letter-spacing: var(--bit-tpg-h6-letter-spacing);
+
+// subtitle1
+$tg-subtitle1-margin: var(--bit-tpg-subtitle1-margin);
+$tg-subtitle1-font-weight: var(--bit-tpg-subtitle1-font-weight);
+$tg-subtitle1-font-size: var(--bit-tpg-subtitle1-font-size);
+$tg-subtitle1-line-height: var(--bit-tpg-subtitle1-line-height);
+$tg-subtitle1-letter-spacing: var(--bit-tpg-subtitle1-letter-spacing);
+
+// subtitle2
+$tg-subtitle2-margin: var(--bit-tpg-subtitle2-margin);
+$tg-subtitle2-font-weight: var(--bit-tpg-subtitle2-font-weight);
+$tg-subtitle2-font-size: var(--bit-tpg-subtitle2-font-size);
+$tg-subtitle2-line-height: var(--bit-tpg-subtitle2-line-height);
+$tg-subtitle2-letter-spacing: var(--bit-tpg-subtitle2-letter-spacing);
+
+// body1
+$tg-body1-margin: var(--bit-tpg-body1-margin);
+$tg-body1-font-weight: var(--bit-tpg-body1-font-weight);
+$tg-body1-font-size: var(--bit-tpg-body1-font-size);
+$tg-body1-line-height: var(--bit-tpg-body1-line-height);
+$tg-body1-letter-spacing: var(--bit-tpg-body1-letter-spacing);
+
+// body2
+$tg-body2-margin: var(--bit-tpg-body2-margin);
+$tg-body2-font-weight: var(--bit-tpg-body2-font-weight);
+$tg-body2-font-size: var(--bit-tpg-body2-font-size);
+$tg-body2-line-height: var(--bit-tpg-body2-line-height);
+$tg-body2-letter-spacing: var(--bit-tpg-body2-letter-spacing);
+
+// button
+$tg-button-margin: var(--bit-tpg-button-margin);
+$tg-button-font-weight: var(--bit-tpg-button-font-weight);
+$tg-button-font-size: var(--bit-tpg-button-font-size);
+$tg-button-line-height: var(--bit-tpg-button-line-height);
+$tg-button-letter-spacing: var(--bit-tpg-button-letter-spacing);
+$tg-button-text-transform: var(--bit-tpg-button-text-transform);
+$tg-button-display: var(--bit-tpg-button-display);
+
+// caption1
+$tg-caption1-margin: var(--bit-tpg-caption1-margin);
+$tg-caption1-font-weight: var(--bit-tpg-caption1-font-weight);
+$tg-caption1-font-size: var(--bit-tpg-caption1-font-size);
+$tg-caption1-line-height: var(--bit-tpg-caption1-line-height);
+$tg-caption1-letter-spacing: var(--bit-tpg-caption1-letter-spacing);
+
+// caption2
+$tg-caption2-margin: var(--bit-tpg-caption2-margin);
+$tg-caption2-font-weight: var(--bit-tpg-caption2-font-weight);
+$tg-caption2-font-size: var(--bit-tpg-caption2-font-size);
+$tg-caption2-line-height: var(--bit-tpg-caption2-line-height);
+$tg-caption2-letter-spacing: var(--bit-tpg-caption2-letter-spacing);
+
+// overline
+$tg-overline-margin: var(--bit-tpg-overline-margin);
+$tg-overline-font-weight: var(--bit-tpg-overline-font-weight);
+$tg-overline-font-size: var(--bit-tpg-overline-font-size);
+$tg-overline-line-height: var(--bit-tpg-overline-line-height);
+$tg-overline-letter-spacing: var(--bit-tpg-overline-letter-spacing);
+$tg-overline-text-transform: var(--bit-tpg-overline-text-transform);
+$tg-overline-display: var(--bit-tpg-overline-display);
+
+// inherit
+$tg-inherit-margin: var(--bit-tpg-inherit-margin);
+$tg-inherit-font-family: var(--bit-tpg-inherit-font-family);
+$tg-inherit-font-weight: var(--bit-tpg-inherit-font-weight);
+$tg-inherit-font-size: var(--bit-tpg-inherit-font-size);
+$tg-inherit-line-height: var(--bit-tpg-inherit-line-height);
+$tg-inherit-letter-spacing: var(--bit-tpg-inherit-letter-spacing);

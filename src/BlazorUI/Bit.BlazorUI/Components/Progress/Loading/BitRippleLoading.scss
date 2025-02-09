@@ -1,0 +1,55 @@
+.bit-ldn-rpl {
+}
+
+.bit-ldn-rpl-ccn {
+    position: relative;
+    display: inline-block;
+    width: var(--bit-ldn-size);
+    height: var(--bit-ldn-size);
+}
+
+.bit-ldn-rpl-chl {
+    opacity: 1;
+    position: absolute;
+    border-radius: 50%;
+    border: var(--bit-ldn-rpl-4) solid var(--bit-ldn-color);
+    animation: bit-ldn-rpl-anm 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.bit-ldn-rpl-ch2 {
+    animation-delay: -0.5s;
+}
+
+@keyframes bit-ldn-rpl-anm {
+    0% {
+        opacity: 0;
+        top: var(--bit-ldn-rpl-36);
+        left: var(--bit-ldn-rpl-36);
+        width: var(--bit-ldn-rpl-8);
+        height: var(--bit-ldn-rpl-8);
+    }
+
+    4.9% {
+        opacity: 0;
+        top: var(--bit-ldn-rpl-36);
+        left: var(--bit-ldn-rpl-36);
+        width: var(--bit-ldn-rpl-8);
+        height: var(--bit-ldn-rpl-8);
+    }
+
+    5% {
+        opacity: 1;
+        top: var(--bit-ldn-rpl-36);
+        left: var(--bit-ldn-rpl-36);
+        width: var(--bit-ldn-rpl-8);
+        height: var(--bit-ldn-rpl-8);
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+        width: var(--bit-ldn-rpl-80);
+        height: var(--bit-ldn-rpl-80);
+    }
+}

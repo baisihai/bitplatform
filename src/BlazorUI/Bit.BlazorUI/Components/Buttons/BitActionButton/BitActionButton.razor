@@ -1,0 +1,57 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+@if (Href.HasNoValue())
+{
+    <button @ref="RootElement" @attributes="HtmlAttributes" @onclick="HandleOnClick"
+            id="@_Id"
+            style="@StyleBuilder.Value"
+            class="@ClassBuilder.Value"
+            type="@_buttonType.GetValue()"
+            dir="@Dir?.ToString().ToLower()"
+            disabled="@(IsEnabled is false)"
+            title="@Title"
+            tabindex="@_tabIndex"
+            aria-label="@AriaLabel"
+            aria-hidden="@AriaHidden"
+            aria-describedby="@AriaDescription">
+        @if (IconName is not null)
+        {
+            <i style="@Styles?.Icon" class="bit-acb-ico bit-icon bit-icon--@IconName @Classes?.Icon" />
+        }
+        @if (ChildContent is not null && IconOnly is false)
+        {
+            <div style="@Styles?.Content" class="bit-acb-con @Classes?.Content">
+                @ChildContent
+            </div>
+        }
+    </button>
+}
+else
+{
+    <a @ref="RootElement" @attributes="HtmlAttributes" @onclick="HandleOnClick"
+       id="@_Id"
+       rel="@_rel"
+       style="@StyleBuilder.Value"
+       class="@ClassBuilder.Value"
+       dir="@Dir?.ToString().ToLower()"
+       disabled="@(IsEnabled is false)"
+       href="@(IsEnabled ? Href : null)"
+       title="@Title"
+       target="@Target"
+       tabindex="@_tabIndex"
+       aria-label="@AriaLabel"
+       aria-hidden="@AriaHidden"
+       aria-describedby="@AriaDescription">
+        @if (IconName is not null)
+        {
+            <i style="@Classes?.Icon" class="bit-acb-ico bit-icon bit-icon--@IconName @Classes?.Icon" />
+        }
+        @if (ChildContent is not null)
+        {
+            <div style="@Styles?.Content" class="bit-acb-con @Classes?.Content">
+                @ChildContent
+            </div>
+        }
+    </a>
+}

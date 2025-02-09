@@ -1,0 +1,419 @@
+﻿@import "../../../Styles/functions.scss";
+
+.bit-btn {
+    cursor: pointer;
+    gap: spacing(0.5);
+    text-align: start;
+    align-items: center;
+    flex-direction: row;
+    display: inline-flex;
+    text-decoration: none;
+    box-sizing: border-box;
+    justify-content: center;
+    color: var(--bit-btn-clr-txt);
+    font-family: $tg-font-family;
+    font-weight: $tg-font-weight;
+    padding: var(--bit-btn-padding);
+    border-width: $shp-border-width;
+    border-style: $shp-border-style;
+    border-radius: $shp-border-radius;
+    --bit-btn-clr-bg-dis: #{$clr-bg-dis};
+    --bit-btn-clr-brd-dis: #{$clr-brd-dis};
+    --bit-btn-float-offset: #{spacing(2)};
+
+    &.bit-dis {
+        cursor: default;
+        color: $clr-fg-dis;
+        pointer-events: none;
+    }
+
+    @keyframes bit-btn-spinner-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.bit-btn-hsc {
+    align-items: flex-start;
+}
+
+.bit-btn-tcn {
+    display: flex;
+    gap: spacing(0.625);
+    flex-direction: column;
+}
+
+.bit-btn-prt {
+    display: flex;
+    align-items: center;
+    font-size: var(--bit-btn-prt-fontsize);
+}
+
+.bit-btn-sct {
+    font-size: var(--bit-btn-sct-fontsize);
+}
+
+.bit-btn-icn {
+    font-size: var(--bit-btn-icn-fontsize);
+    margin-top: var(--bit-btn-icn-margintop);
+}
+
+.bit-btn-rvi {
+    flex-direction: row-reverse;
+}
+
+.bit-btn-spn {
+    border-radius: 50%;
+    border-width: spacing(0.2125);
+    width: var(--bit-btn-spn-size);
+    height: var(--bit-btn-spn-size);
+    border-color: $clr-brd-sec;
+    border-style: $shp-border-style;
+    border-top-color: var(--bit-btn-clr-spn);
+    animation: bit-btn-spinner-animation 1.3s linear infinite;
+    animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
+}
+
+.bit-btn-ldg {
+    display: flex;
+    gap: spacing(1);
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.bit-btn-lbl {
+    color: inherit;
+    text-align: center;
+    font-size: var(--bit-btn-lbl-fontsize);
+}
+
+.bit-btn-flw {
+    width: 100%;
+    z-index: $zindex-base;
+}
+
+.bit-btn-fab {
+    position: absolute;
+    z-index: $zindex-base;
+}
+
+.bit-btn-ffx {
+    position: fixed;
+    z-index: $zindex-base;
+}
+
+
+.bit-btn-fil {
+    border-color: var(--bit-btn-clr);
+    background-color: var(--bit-btn-clr);
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--bit-btn-clr-hover);
+            background-color: var(--bit-btn-clr-hover);
+        }
+    }
+
+    &:active {
+        border-color: var(--bit-btn-clr-active);
+        background-color: var(--bit-btn-clr-active);
+    }
+
+    &.bit-dis {
+        border-color: var(--bit-btn-clr-brd-dis);
+        background-color: var(--bit-btn-clr-bg-dis);
+    }
+}
+
+.bit-btn-otl {
+    color: var(--bit-btn-clr);
+    background-color: transparent;
+    border-color: var(--bit-btn-clr);
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--bit-btn-clr-txt);
+            background-color: var(--bit-btn-clr-hover);
+        }
+    }
+
+    &:active {
+        color: var(--bit-btn-clr-txt);
+        background-color: var(--bit-btn-clr-active);
+    }
+
+    &.bit-dis {
+        border-color: var(--bit-btn-clr-brd-dis);
+    }
+}
+
+.bit-btn-txt {
+    color: var(--bit-btn-clr);
+    border-color: transparent;
+    background-color: transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--bit-btn-clr-txt);
+            background-color: var(--bit-btn-clr-hover);
+        }
+    }
+
+    &:active {
+        color: var(--bit-btn-clr-txt);
+        background-color: var(--bit-btn-clr-active);
+    }
+}
+
+
+.bit-btn-pri {
+    --bit-btn-clr: #{$clr-pri};
+    --bit-btn-clr-txt: #{$clr-pri-text};
+    --bit-btn-clr-hover: #{$clr-pri-hover};
+    --bit-btn-clr-active: #{$clr-pri-active};
+    --bit-btn-clr-spn: #{$clr-pri-dark};
+}
+
+.bit-btn-sec {
+    --bit-btn-clr: #{$clr-sec};
+    --bit-btn-clr-txt: #{$clr-sec-text};
+    --bit-btn-clr-hover: #{$clr-sec-hover};
+    --bit-btn-clr-active: #{$clr-sec-active};
+    --bit-btn-clr-spn: #{$clr-sec-dark};
+}
+
+.bit-btn-ter {
+    --bit-btn-clr: #{$clr-ter};
+    --bit-btn-clr-txt: #{$clr-ter-text};
+    --bit-btn-clr-hover: #{$clr-ter-hover};
+    --bit-btn-clr-active: #{$clr-ter-active};
+    --bit-btn-clr-spn: #{$clr-ter-dark};
+}
+
+.bit-btn-inf {
+    --bit-btn-clr: #{$clr-inf};
+    --bit-btn-clr-txt: #{$clr-inf-text};
+    --bit-btn-clr-hover: #{$clr-inf-hover};
+    --bit-btn-clr-active: #{$clr-inf-active};
+    --bit-btn-clr-spn: #{$clr-inf-dark};
+}
+
+.bit-btn-suc {
+    --bit-btn-clr: #{$clr-suc};
+    --bit-btn-clr-txt: #{$clr-suc-text};
+    --bit-btn-clr-hover: #{$clr-suc-hover};
+    --bit-btn-clr-active: #{$clr-suc-active};
+    --bit-btn-clr-spn: #{$clr-suc-dark};
+}
+
+.bit-btn-wrn {
+    --bit-btn-clr: #{$clr-wrn};
+    --bit-btn-clr-txt: #{$clr-wrn-text};
+    --bit-btn-clr-hover: #{$clr-wrn-hover};
+    --bit-btn-clr-active: #{$clr-wrn-active};
+    --bit-btn-clr-spn: #{$clr-wrn-dark};
+}
+
+.bit-btn-swr {
+    --bit-btn-clr: #{$clr-swr};
+    --bit-btn-clr-txt: #{$clr-swr-text};
+    --bit-btn-clr-hover: #{$clr-swr-hover};
+    --bit-btn-clr-active: #{$clr-swr-active};
+    --bit-btn-clr-spn: #{$clr-swr-dark};
+}
+
+.bit-btn-err {
+    --bit-btn-clr: #{$clr-err};
+    --bit-btn-clr-txt: #{$clr-err-text};
+    --bit-btn-clr-hover: #{$clr-err-hover};
+    --bit-btn-clr-active: #{$clr-err-active};
+    --bit-btn-clr-spn: #{$clr-err-dark};
+}
+
+.bit-btn-pbg {
+    --bit-btn-clr: #{$clr-bg-pri};
+    --bit-btn-clr-txt: #{$clr-fg-pri};
+    --bit-btn-clr-hover: #{$clr-bg-pri-hover};
+    --bit-btn-clr-active: #{$clr-bg-pri-active};
+    --bit-btn-clr-spn: #{$clr-fg-pri};
+}
+
+.bit-btn-sbg {
+    --bit-btn-clr: #{$clr-bg-sec};
+    --bit-btn-clr-txt: #{$clr-fg-pri};
+    --bit-btn-clr-hover: #{$clr-bg-sec-hover};
+    --bit-btn-clr-active: #{$clr-bg-sec-active};
+    --bit-btn-clr-spn: #{$clr-fg-pri};
+}
+
+.bit-btn-tbg {
+    --bit-btn-clr: #{$clr-bg-ter};
+    --bit-btn-clr-txt: #{$clr-fg-pri};
+    --bit-btn-clr-hover: #{$clr-bg-ter-hover};
+    --bit-btn-clr-active: #{$clr-bg-ter-active};
+    --bit-btn-clr-spn: #{$clr-fg-pri};
+}
+
+.bit-btn-pfg {
+    --bit-btn-clr: #{$clr-fg-pri};
+    --bit-btn-clr-txt: #{$clr-bg-pri};
+    --bit-btn-clr-hover: #{$clr-fg-pri-hover};
+    --bit-btn-clr-active: #{$clr-fg-pri-active};
+    --bit-btn-clr-spn: #{$clr-bg-pri};
+}
+
+.bit-btn-sfg {
+    --bit-btn-clr: #{$clr-fg-sec};
+    --bit-btn-clr-txt: #{$clr-bg-pri};
+    --bit-btn-clr-hover: #{$clr-fg-sec-hover};
+    --bit-btn-clr-active: #{$clr-fg-sec-active};
+    --bit-btn-clr-spn: #{$clr-bg-pri};
+}
+
+.bit-btn-tfg {
+    --bit-btn-clr: #{$clr-fg-ter};
+    --bit-btn-clr-txt: #{$clr-bg-pri};
+    --bit-btn-clr-hover: #{$clr-fg-ter-hover};
+    --bit-btn-clr-active: #{$clr-fg-ter-active};
+    --bit-btn-clr-spn: #{$clr-bg-pri};
+}
+
+.bit-btn-pbr {
+    --bit-btn-clr: #{$clr-brd-pri};
+    --bit-btn-clr-txt: #{$clr-fg-pri};
+    --bit-btn-clr-hover: #{$clr-brd-pri-hover};
+    --bit-btn-clr-active: #{$clr-brd-pri-active};
+    --bit-btn-clr-spn: #{$clr-fg-pri};
+}
+
+.bit-btn-sbr {
+    --bit-btn-clr: #{$clr-brd-sec};
+    --bit-btn-clr-txt: #{$clr-fg-pri};
+    --bit-btn-clr-hover: #{$clr-brd-sec-hover};
+    --bit-btn-clr-active: #{$clr-brd-sec-active};
+    --bit-btn-clr-spn: #{$clr-fg-pri};
+}
+
+.bit-btn-tbr {
+    --bit-btn-clr: #{$clr-brd-ter};
+    --bit-btn-clr-txt: #{$clr-fg-pri};
+    --bit-btn-clr-hover: #{$clr-brd-ter-hover};
+    --bit-btn-clr-active: #{$clr-brd-ter-active};
+    --bit-btn-clr-spn: #{$clr-fg-pri};
+}
+
+
+.bit-btn-sm {
+    --bit-btn-spn-size: #{spacing(1.75)};
+    --bit-btn-lbl-fontsize: #{spacing(1.25)};
+    --bit-btn-prt-fontsize: #{spacing(1.50)};
+    --bit-btn-sct-fontsize: #{spacing(1.25)};
+    --bit-btn-icn-fontsize: #{spacing(1.50)};
+    --bit-btn-icn-margintop: #{spacing(0.2)};
+    --bit-btn-pad-ntx: #{spacing(0.5)};
+    --bit-btn-padding: #{spacing(0.5)} #{spacing(1.5)};
+}
+
+.bit-btn-md {
+    --bit-btn-spn-size: #{spacing(2.5)};
+    --bit-btn-lbl-fontsize: #{spacing(1.50)};
+    --bit-btn-prt-fontsize: #{spacing(1.75)};
+    --bit-btn-sct-fontsize: #{spacing(1.50)};
+    --bit-btn-icn-fontsize: #{spacing(2.00)};
+    --bit-btn-icn-margintop: #{spacing(0.25)};
+    --bit-btn-pad-ntx: #{spacing(0.75)};
+    --bit-btn-padding: #{spacing(0.75)} #{spacing(2.0)};
+}
+
+.bit-btn-lg {
+    --bit-btn-spn-size: #{spacing(3.25)};
+    --bit-btn-lbl-fontsize: #{spacing(1.75)};
+    --bit-btn-prt-fontsize: #{spacing(2.50)};
+    --bit-btn-sct-fontsize: #{spacing(2.00)};
+    --bit-btn-icn-fontsize: #{spacing(2.50)};
+    --bit-btn-icn-margintop: #{spacing(0.5)};
+    --bit-btn-pad-ntx: #{spacing(1.0)};
+    --bit-btn-padding: #{spacing(1.0)} #{spacing(2.5)};
+}
+
+
+.bit-btn-srt {
+    flex-direction: row-reverse;
+}
+
+.bit-btn-top {
+    flex-direction: column-reverse;
+}
+
+.bit-btn-btm {
+    flex-direction: column;
+}
+
+
+.bit-btn-trg {
+    top: var(--bit-btn-float-offset);
+    right: var(--bit-btn-float-offset);
+}
+
+.bit-btn-tlf {
+    top: var(--bit-btn-float-offset);
+    left: var(--bit-btn-float-offset);
+}
+
+.bit-btn-tcr {
+    left: 50%;
+    transform: translateX(-50%);
+    top: var(--bit-btn-float-offset);
+}
+
+.bit-btn-clf {
+    top: 50%;
+    transform: translateY(-50%);
+    left: var(--bit-btn-float-offset);
+}
+
+.bit-btn-crg {
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--bit-btn-float-offset);
+}
+
+.bit-btn-ctr {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bit-btn-blf {
+    left: var(--bit-btn-float-offset);
+    bottom: var(--bit-btn-float-offset);
+}
+
+.bit-btn-brg {
+    right: var(--bit-btn-float-offset);
+    bottom: var(--bit-btn-float-offset);
+}
+
+.bit-btn-bcr {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: var(--bit-btn-float-offset);
+}
+
+
+// important: these need to be here at the end!
+
+.bit-btn-fxc {
+    color: var(--bit-btn-clr-txt);
+}
+
+.bit-btn-ntx {
+    padding: var(--bit-btn-pad-ntx);
+    --bit-btn-icn-margintop: 0;
+}

@@ -1,0 +1,42 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+@{
+    var showNavPanel = NavPanel is not null && HideNavPanel is false;
+}
+
+<div @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+    <CascadingValue Value="Dir">
+        @if (Header is not null)
+        {
+            <header style="@Styles?.Header" class="bit-lyt-hdr @Classes?.Header">
+                @Header
+            </header>
+        }
+
+        <main style="@(ReverseNavPanel ? "flex-direction:row-reverse;" : "") @Styles?.Main" class="bit-lyt-man @Classes?.Main">
+            @if (showNavPanel)
+            {
+                <div style="@Styles?.NavPanel" class="bit-lyt-nmn @Classes?.NavPanel">
+                    @NavPanel
+                </div>
+            }
+
+            <div style="@($"{(showNavPanel ? FormattableString.Invariant($"width:calc(100% - {NavPanelWidth}px);") : "")}") @Styles?.MainContent" 
+                 class="bit-lyt-mcn @Classes?.MainContent">
+                @Main
+            </div>
+        </main>
+
+        @if (Footer is not null)
+        {
+            <footer style="@Styles?.Footer" class="bit-lyt-ftr @Classes?.Footer">
+                @Footer
+            </footer>
+        }
+    </CascadingValue>
+</div>

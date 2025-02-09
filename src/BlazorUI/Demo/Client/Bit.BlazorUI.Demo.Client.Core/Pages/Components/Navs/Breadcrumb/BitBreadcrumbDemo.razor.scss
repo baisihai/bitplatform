@@ -1,0 +1,57 @@
+﻿::deep {
+    .example-box {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+
+        .operators {
+            gap: 5px;
+            display: flex;
+            max-width: 300px;
+            flex-flow: column nowrap;
+        }
+    }
+
+    .custom-class {
+        font-style: italic;
+        text-shadow: dodgerblue 0 0 0.5rem;
+        border-bottom: 1px solid dodgerblue;
+    }
+
+    .custom-item {
+        color: #ffcece;
+
+        &:hover {
+            color: #ff6868;
+            background: transparent;
+        }
+    }
+
+    .custom-item-1 {
+        color: #b6ff00;
+
+        &:hover {
+            color: #2aff00;
+            background: transparent;
+        }
+    }
+
+    .custom-item-2 {
+        color: #ffd800;
+
+        &:hover {
+            color: #ff6a00;
+            background: transparent;
+        }
+    }
+
+    .custom-selected-item {
+        color: blueviolet;
+
+        &:hover {
+            color: blueviolet;
+            background: transparent;
+            text-shadow: blueviolet 0 0 1rem;
+        }
+    }
+}

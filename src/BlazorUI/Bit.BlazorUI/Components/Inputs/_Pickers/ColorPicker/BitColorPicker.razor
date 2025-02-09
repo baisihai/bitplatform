@@ -1,0 +1,73 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+<div @ref="RootElement"
+     @attributes="HtmlAttributes"
+     id="@_Id"
+     role="group"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()"
+     aria-label="@GetRootElAriaLabel()">
+
+    <div @ref="_saturationPickerRef"
+         @onpointerdown="HandleOnSaturationPickerPointerDown"
+         tabindex="0"
+         role="slider"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         class="bit-clp-rec"
+         aria-label="Color saturation"
+         style="@_saturationPickerStyle">
+        <div class="bit-clp-light"></div>
+        <div class="bit-clp-dark"></div>
+        <div class="bit-clp-thumb"
+             style=@($"top:{_saturationPickerThumbPosition?.Top}px;left:{_saturationPickerThumbPosition?.Left}px;background-color:{Rgb}")>        </div>
+    </div>
+
+    <div class="bit-clp-cnt">
+        <div class="bit-clp-sct">
+            <div class="bit-clp-sld bit-clp-hsd">
+                <input @oninput="HandleOnHueInput"
+                       min="0"
+                       max="359"
+                       type="range"
+                       tabindex="0"
+                       role="slider"
+                       value="@_selectedHue"
+                       class="bit-clp-inp"
+                       aria-label="Hue"
+                       aria-valuemin="0"
+                       aria-valuemax="359"
+                       aria-valuenow="@_selectedHue"
+                       aria-valuetext="@_selectedHue">
+            </div>
+
+            @if (ShowAlphaSlider)
+            {
+                <div class="bit-clp-sld bit-clp-asd"
+                     style=@($"background:linear-gradient(to left,{Rgb} 0%, transparent 100%), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQYV2N89erVfwY0ICYmxoguxjgUFKI7GsTH5m4M3w1ChQC1/Ca8i2n1WgAAAABJRU5ErkJggg==);")>
+                    <input @oninput="HandleOnAlphaInput"
+                           step="0.01"
+                           min="0"
+                           max="1"
+                           type="range"
+                           tabindex="0"
+                           role="slider"
+                           aria-valuemin="0"
+                           aria-label="Alpha"
+                           class="bit-clp-inp"
+                           aria-valuemax="1"
+                           value="@_color.A"
+                           aria-valuenow="@_color.A"
+                           aria-valuetext="@_color.A">
+                </div>
+            }
+        </div>
+
+        @if (ShowPreview)
+        {
+            <div class="bit-clp-pre" style=@($"background: {_color.Rgba}")></div>
+        }
+    </div>
+</div>  

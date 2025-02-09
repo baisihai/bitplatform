@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "dotnet-ef": {
+      //#if (framework == 'net9.0')
+      "version": "9.0.1",
+      //#else
+      "version": "8.0.12",
+      //#endif
+      "commands": [
+        "dotnet-ef"
+      ]
+    }
+  }
+}

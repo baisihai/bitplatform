@@ -1,0 +1,33 @@
+﻿@import '../../../../Styles/abstracts/_bit-css-variables.scss';
+
+.example-box {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+}
+
+::deep {
+    .custom-class {
+        margin-inline: 1rem;
+        border-radius: 0.25rem;
+        padding-inline: 0.5rem;
+        border: 1px solid dodgerblue;
+        box-shadow: dodgerblue 0 0 1rem;
+    }
+
+    .custom-selected {
+        color: seagreen;
+    }
+
+    .custom-unselected {
+        color: mediumseagreen;
+    }
+
+    .custom-unselected:hover {
+        color: lightseagreen;
+    }
+
+    .validation-message {
+        color: $bit-color-error;
+    }
+}

@@ -1,0 +1,57 @@
+﻿@import '../../../../Styles/abstracts/_bit-css-variables.scss';
+
+.example-box {
+    max-width: 19rem;
+}
+
+::deep {
+    .custom-class {
+        overflow: hidden;
+        margin-inline: 1rem;
+        border-radius: 1rem;
+        border: 2px solid tomato;
+    }
+
+    .custom-class * {
+        border: none;
+    }
+
+    .custom-root {
+        margin-inline: 1rem;
+    }
+
+    .custom-input-container {
+        height: 3rem;
+        overflow: hidden;
+        align-items: center;
+        border-radius: 1.5rem;
+        border-color: #13a3a375;
+        background-color: #13a3a375;
+    }
+
+    .custom-focused .custom-input-container {
+        border-width: 1px;
+        border-color: #13a3a375;
+    }
+
+    .custom-clear:hover {
+        background: transparent;
+    }
+
+    .custom-icon {
+        color: darkslategrey;
+    }
+
+    .custom-icon-wrapper {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 1rem;
+        margin-inline: 0.5rem;
+        background-color: whitesmoke;
+    }
+
+    .validation-message {
+        font-size: rem2(12px);
+        color: $bit-color-error;
+    }
+}

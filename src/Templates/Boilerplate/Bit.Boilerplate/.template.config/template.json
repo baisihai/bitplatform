@@ -1,0 +1,605 @@
+﻿{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "bit platform",
+    "classifications": [
+        "ASP.NET Core",
+        "Blazor",
+        "MAUI"
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "solution"
+    },
+    "identity": "Bit.Boilerplate",
+    "name": "bit Boilerplate",
+    "shortName": "bit-bp",
+    "sourceName": "Boilerplate",
+    "preferNameDirectory": true,
+    "symbols": {
+        "framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "defaultValue": "net9.0",
+            "choices": [
+                {
+                    "choice": "net8.0",
+                    "description": "Target net8.0"
+                },
+                {
+                    "choice": "net9.0",
+                    "description": "Target net9.0"
+                }
+            ],
+            "replaces": "net9.0"
+        },
+        "helpUrl": {
+            "displayName": "More info at",
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "https://bitplatform.dev/templates/create-project",
+            "description": "Open the following url in order to get more information about the following parameters."
+        },
+        //Guid generator for App Id
+        "ApplicationIdGuid": {
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "AC87AA5B-4B37-4E52-8468-2D5DF24AF256",
+            "parameters": {
+                "defaultFormat": "D" //Guid format 
+            }
+        },
+        "SeedDataProductCreatedOn": {
+            "type": "generated",
+            "generator": "now",
+            "replaces": "2022-07-12",
+            "parameters": {
+                "format": "yyyy-MM-dd"
+            }
+        },
+        "database": {
+            "displayName": "Backend database",
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "Sqlite",
+            "choices": [
+                {
+                    "choice": "SqlServer",
+                    "description": "Sql Server"
+                },
+                {
+                    "choice": "Sqlite",
+                    "description": "Sqlite"
+                },
+                {
+                    "choice": "PostgreSQL",
+                    "description": "PostgreSQL"
+                },
+                {
+                    "choice": "MySql",
+                    "description": "MySql - MariaDB"
+                },
+                {
+                    "choice": "Other",
+                    "description": "You can install and configure any database supported by ef core (https://learn.microsoft.com/en-us/ef/core/providers)"
+                }
+            ],
+            "description": "Boilerplate's API uses EF Core. You can use SQL Server, SQLite, or any other EF Core provider."
+        },
+        "filesStorage": {
+            "displayName": "Files storage",
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "Local",
+            "choices": [
+                {
+                    "choice": "Local",
+                    "description": "Use either the local App_Data folder or the /container_volume for Docker containers."
+                },
+                {
+                    "choice": "AzureBlobStorage",
+                    "description": "Azure blob storage"
+                },
+                {
+                    "choice": "Other",
+                    "description": "You can install and configure any storage supported by fluent storage (https://github.com/robinrodricks/FluentStorage/wiki/Blob-Storage)"
+                }
+            ],
+            "description": "Boilerplate's API uses Fluent Storage. You can use any other fluent storage provider (https://github.com/robinrodricks/FluentStorage/wiki/Blob-Storage)"
+        },
+        "api": {
+            "displayName": "API deployment configuration",
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "Integrated",
+            "choices": [
+                {
+                    "choice": "Integrated",
+                    "description": "A single-deployment configuration that serves API controllers and Blazor web server together"
+                },
+                {
+                    "choice": "Standalone",
+                    "description": "A multi-server deployment configuration in which the API controllers are separate from the Blazor server"
+                }
+            ]
+        },
+        "pipeline": {
+            "displayName": "CI-CD pipeline",
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "GitHub",
+            "choices": [
+                {
+                    "choice": "GitHub",
+                    "description": "GitHub actions"
+                },
+                {
+                    "choice": "Azure",
+                    "description": "Azure DevOps pipelines"
+                },
+                {
+                    "choice": "None",
+                    "description": "None"
+                }
+            ]
+        },
+        "module": {
+            "displayName": "Module",
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "None",
+            "choices": [
+                {
+                    "choice": "Admin",
+                    "description": "Admin Panel module"
+                },
+                {
+                    "choice": "Sales",
+                    "description": "Sales (E-Commerce module)"
+                },
+                {
+                    "choice": "None",
+                    "description": "None"
+                }
+            ]
+        },
+        "captcha": {
+            "displayName": "Captcha",
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "None",
+            "choices": [
+                {
+                    "choice": "reCaptcha",
+                    "description": "Google reCaptcha"
+                },
+                {
+                    "choice": "None",
+                    "description": "None"
+                }
+            ]
+        },
+        "notification": {
+            "displayName": "Add push notification?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add push notification."
+        },
+        "sample": {
+            "displayName": "Sample",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add todo page sample."
+        },
+        "sentry": {
+            "displayName": "Add Sentry logging to project?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false"
+        },
+        "appInsights": {
+            "displayName": "Add Azure application insights to project?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false"
+        },
+        "signalR": {
+            "displayName": "Add SignalR?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add SignalR sample."
+        },
+        "offlineDb": {
+            "displayName": "Add Offline db?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add support for EF Core DbContext on the client side. If your app doesn't need offline data storage, we recommend not enabling this feature."
+        },
+        "cloudflare": {
+            "displayName": "Add cloudflare CDN integration?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Add cloudflare CDN integration."
+        },
+        "windows": {
+            "displayName": "Add Windows project?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": ".NET desktop app project supporting Windows 7 SP1 and above."
+        },
+        "nameToLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "name",
+                "toLower": true
+            }
+        },
+        "nameToAppId": {
+            "type": "generated",
+            "generator": "regex",
+            "dataType": "string",
+            "parameters": {
+                "source": "nameToLower",
+                "steps": [
+                    {
+                        "regex": "[^a-z0-9_\\.]",
+                        "replacement": ""
+                    }
+                ]
+            }
+        },
+        "defaultAppId": {
+            "type": "generated",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                    {
+                        "type": "const",
+                        "value": "com.companyname."
+                    },
+                    {
+                        "type": "ref",
+                        "value": "nameToAppId"
+                    }
+                ]
+            },
+            "replaces": "com.bitplatform.template"
+        },
+        "serverWebPortGenerated": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 5000,
+                "high": 5000
+            },
+            "replaces": "5030"
+        },
+        "serveApiPortGenerated": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 5001,
+                "high": 5300
+            },
+            "replaces": "5031"
+        },
+        "clientWebPortGenerated": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 4000,
+                "high": 4300
+            },
+            "replaces": "4030"
+        },
+        "apiServerUrl": {
+            "displayName": "Server url",
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "use-your-api-server-url-here.com",
+            "description": "The backend api server url. You can change its value later if needed."
+        },
+        "normalizedServerUrl": {
+            "type": "generated",
+            "generator": "regex",
+            "dataType": "string",
+            "parameters": {
+                "source": "apiServerUrl",
+                "steps": [
+                    {
+                        "regex": "^(https|http):\/\/",
+                        "replacement": ""
+                    }
+                ]
+            },
+            "replaces": "use-your-api-server-url-here.com"
+        },
+        "webAppUrl": {
+            "displayName": "web app url",
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "use-your-web-app-url-here.com",
+            "description": "The web app url. You can change its value later if needed."
+        },
+        "normalizedWebAppUrl": {
+            "type": "generated",
+            "generator": "regex",
+            "dataType": "string",
+            "parameters": {
+                "source": "webAppUrl",
+                "steps": [
+                    {
+                        "regex": "^(https|http):\/\/",
+                        "replacement": ""
+                    }
+                ]
+            },
+            "replaces": "use-your-web-app-url-here.com"
+        },
+        "advancedTests": {
+            "displayName": "Include advanced automated tests?",
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Include advanced automated tests."
+        }
+    },
+    "postActions": [
+        {
+            "description": "restore project dependencies",
+            "manualInstructions": [
+                {
+                    "text": "Run 'dotnet restore'"
+                }
+            ],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "args": {
+                "files": [ "Boilerplate.Web.slnf" ]
+            },
+            "continueOnError": true
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens README.md in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0" // "README.md"
+            },
+            "continueOnError": true
+        }
+    ],
+    "primaryOutputs": [
+        {
+            "path": "README.md"
+        },
+        {
+            "path": "Boilerplate.sln"
+        }
+    ],
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "copyOnly": [
+                        "**/*.svg",
+                        "**/*.png",
+                        "**/*.sh"
+                    ],
+                    "exclude": [
+                        ".vs/**",
+                        "**/[Bb]in/**",
+                        "**/[Oo]bj/**",
+                        ".template.config/**",
+                        "**/*.filelist",
+                        "**/*.user",
+                        "**/*.lock.json",
+                        "**/.git/**",
+                        "**/*.nuspec",
+                        "src/Server/**/Data/Migrations/**",
+                        "src/**/App_Data/**"
+                    ]
+                },
+                {
+                    "condition": "(pipeline != GitHub)",
+                    "exclude": [
+                        ".github/**"
+                    ]
+                },
+                {
+                    "condition": "(pipeline != Azure)",
+                    "exclude": [
+                        ".azure-devops/**"
+                    ]
+                },
+                {
+                    "condition": "(module != Admin)",
+                    "exclude": [
+                        "src/Shared/Dtos/Dashboard/**",
+                        "src/Server/Boilerplate.Server.Api/Controllers/Dashboard/**",
+                        "src/Server/Boilerplate.Server.Api/Controllers/Categories/**",
+                        "src/Server/Boilerplate.Server.Api/Controllers/Products/ProductController.cs",
+                        "src/Shared/Controllers/Dashboard/**",
+                        "src/Shared/Controllers/Categories/**",
+                        "src/Shared/Controllers/Products/IProductController.cs",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/Authorized/Dashboard/**",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/Authorized/Categories/**",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/Authorized/Products/**"
+                    ]
+                },
+                {
+                    "condition": "(module != Sales)",
+                    "exclude": [
+                        "src/Server/Boilerplate.Server.Api/Controllers/Products/ProductViewController.cs",
+                        "src/Shared/Controllers/Products/IProductViewController.cs",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/ProductPage.*"
+                    ]
+                },
+                {
+                    "condition": "(module != Admin && module != Sales)",
+                    "exclude": [
+                        "src/Shared/Dtos/Categories/**",
+                        "src/Shared/Dtos/Products/**",
+                        "src/Server/Boilerplate.Server.Api/Data/Configurations/Category/**",
+                        "src/Server/Boilerplate.Server.Api/Data/Configurations/Product/**",
+                        "src/Server/Boilerplate.Server.Api/Mappers/CategoriesMapper.cs",
+                        "src/Server/Boilerplate.Server.Api/Mappers/ProductsMapper.cs",
+                        "src/Server/Boilerplate.Server.Api/Models/Categories/**",
+                        "src/Server/Boilerplate.Server.Api/Models/Products/**"
+                    ]
+                },
+                {
+                    "condition": "(sample != true)",
+                    "exclude": [
+                        "src/Shared/Dtos/Todo/**",
+                        "src/Server/Boilerplate.Server.Api/Controllers/Todo/**",
+                        "src/Server/Boilerplate.Server.Api/Mappers/TodoMapper.cs",
+                        "src/Server/Boilerplate.Server.Api/Models/Todo/**",
+                        "src/Server/Boilerplate.Server.Api/Data/Configurations/Todo/**",
+                        "src/Shared/Controllers/Todo/**",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/Authorized/Todo/**"
+                    ]
+                },
+                {
+                    "condition": "(offlineDb != true)",
+                    "exclude": [
+                        "src/Client/Boilerplate.Client.Core/Data/**",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/Authorized/Offline/**"
+                    ]
+                },
+                {
+                    "condition": "(offlineDb != true || framework == \"net8.0\")",
+                    "exclude": [
+                        "src/Client/Boilerplate.Client.Core/Data/CompiledModel/**"
+                    ]
+                },
+                {
+                    "condition": "(signalR != true)",
+                    "exclude": [
+                        "src/Server/Boilerplate.Server.Api/SignalR/**",
+                        "src/Shared/Services/SharedPubSubMessages.cs",
+                        "src/Client/Boilerplate.Client.Core/Services/SignalRInfiniteRetryPolicy.cs"
+                    ]
+                },
+                {
+                    "condition": "(notification != true)",
+                    "exclude": [
+                        "src/Client/Boilerplate.Client.Core/Services/Contracts/IPushNotificationService.cs",
+                        "src/Client/Boilerplate.Client.Core/Services/PushNotificationServiceBase.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/Android/Services/AndroidPushNotificationService.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/Android/Services/PushNotificationFirebaseMessagingService.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/MacCatalyst/Extensions/NSDataExtensions.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/MacCatalyst/Services/AppUNUserNotificationCenterDelegate.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/MacCatalyst/Services/MacCatalystPushNotificationService.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/Windows/Services/WindowsPushNotificationService.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/iOS/Extensions/NSDataExtensions.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/iOS/Services/AppUNUserNotificationCenterDelegate.cs",
+                        "src/Client/Boilerplate.Client.Maui/Platforms/iOS/Services/iOSPushNotificationService.cs",
+                        "src/Client/Boilerplate.Client.Web/Services/WebPushNotificationService.cs",
+                        "src/Client/Boilerplate.Client.Windows/Services/WindowsPushNotificationService.cs",
+                        "src/Server/Boilerplate.Server.Api/Models/PushNotification/**",
+                        "src/Server/Boilerplate.Server.Api/Controllers/PushNotification/**",
+                        "src/Server/Boilerplate.Server.Api/Services/PushNotificationService.cs",
+                        "src/Shared/Controllers/PushNotification/**",
+                        "src/Shared/Dtos/PushNotification/**",
+                        "src/Server/Boilerplate.Server.Api/Mappers/PushNotificationMapper.cs",
+                        "src/Server/Boilerplate.Server.Api/Data/Configurations/PushNotification/**"
+                    ]
+                },
+                {
+                    "condition": "(windows != true)",
+                    "exclude": [
+                        "src/Client/Boilerplate.Client.Windows/**"
+                    ]
+                },
+                {
+                    "condition": "(captcha != reCaptcha)",
+                    "exclude": [
+                        "src/Server/Boilerplate.Server.Api/Services/GoogleRecaptchaService.cs",
+                        "src/Server/Boilerplate.Server.Api/Services/GoogleRecaptchaVerificationResponse.cs",
+                        "src/Client/Boilerplate.Client.Core/Components/Pages/Identity/SignUp/GoogleRecaptcha.razor",
+                        "src/Tests/Services/FakeGoogleRecaptchaService.cs"
+                    ]
+                },
+                {
+                    "condition": "(appInsights != true)",
+                    "exclude": [
+                        "src/Client/Boilerplate.Client.Maui/Services/MauiAppInsightsTelemetryInitializer.cs",
+                        "src/Client/Boilerplate.Client.Windows/Services/WindowsAppInsightsTelemetryInitializer.cs",
+                        "src/Client/Boilerplate.Client.Core/Services/AppInsightsJsSdkService.cs"
+                    ]
+                },
+                {
+                    "condition": "(database != PostgreSQL)",
+                    "exclude": [
+                        "src/Server/Boilerplate.Server.Api/Data/Configurations/PostgresDateTimeOffsetConverter.cs"
+                    ]
+                },
+                {
+                    "condition": "(database != SqlServer)",
+                    "exclude": [
+                        "src/Server/Boilerplate.Server.Api/Data/Configurations/SqlServerPrimaryKeySequentialGuidDefaultValueConvention.cs"
+                    ]
+                },
+                {
+                    "condition": "(api == Integrated)",
+                    "exclude": [
+                        "src/Server/Boilerplate.Server.Web/appsettings*.json",
+                        "src/Server/Boilerplate.Server.Web/Services/AppResponseCachePolicy.cs",
+                        "src/Server/Boilerplate.Server.Web/Services/SimpleJwtSecureDataFormat.cs",
+                        "src/Server/Boilerplate.Server.Web/Extensions/HttpContextExtensions.cs"
+                    ]
+                },
+                {
+                    "condition": "(advancedTests != true)",
+                    "exclude": [
+                        "src/Tests/PageTests/**",
+                        "src/Tests/Services/CulturedStringLocalizer.cs",
+                        "src/Tests/Services/EmailReaderService.cs",
+                        "src/Tests/Services/UserService.cs",
+                        "src/Tests/Services/FakePhoneService.cs",
+                        "src/Tests/Services/FakeGoogleRecaptchaService.cs",
+                        "src/Tests/Extensions/PlaywrightAssetCachingExtensions.cs",
+                        "src/Tests/Extensions/PlaywrightCacheStorageExtensions.cs",
+                        "src/Tests/Extensions/PlaywrightNetworkExtensions.cs",
+                        "src/Tests/Extensions/PlaywrightCacheExtensions.cs",
+                        "src/Tests/Extensions/PlaywrightHydrationExtensions.cs",
+                        "src/Tests/Extensions/BrowserContextExtensions.cs"
+                    ]
+                },
+                {
+                    "condition": "(advancedTests == true)",
+                    "exclude": [
+                        "src/Tests/IdentityApiTests.cs",
+                        "src/Tests/IdentityPagesTests.cs"
+                    ]
+                },
+                {
+                    "condition": "(framework == \"net8.0\")",
+                    "exclude": [
+                        "global.json",
+                        "src/Directory.Packages.props"
+                    ],
+                    "rename": {
+                        "global8.json": "global.json",
+                        "src/Directory.Packages8.props": "src/Directory.Packages.props"
+                    }
+                },
+                {
+                    "condition": "(framework == \"net9.0\")",
+                    "exclude": [
+                        "global8.json",
+                        "src/Directory.Packages8.props"
+                    ]
+                }
+            ]
+        }
+    ]
+}

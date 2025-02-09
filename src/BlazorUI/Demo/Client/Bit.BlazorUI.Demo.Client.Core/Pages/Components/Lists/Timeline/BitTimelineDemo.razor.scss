@@ -1,0 +1,47 @@
+﻿::deep {
+    .example-content {
+        gap: 0.5rem;
+        display: flex;
+    }
+
+    .dot-template {
+        z-index: 1;
+        border-radius: 50%;
+        background-color: tomato;
+
+        div {
+            display: block;
+        }
+    }
+
+    .custom-class {
+        color: dodgerblue;
+        font-weight: bold;
+        margin-inline: 1rem;
+        padding-block: 1rem;
+        text-shadow: dodgerblue 0 0 1rem;
+    }
+
+    .custom-item {
+        color: dodgerblue;
+        font-weight: bold;
+        text-shadow: dodgerblue 0 0 1rem;
+    }
+
+    .custom-dot {
+        border-color: blueviolet;
+        box-shadow: blueviolet 0 0 1rem;
+    }
+
+    .custom-icon {
+        color: blueviolet;
+    }
+
+    .custom-divider::before {
+        background: blueviolet;
+    }
+
+    .custom-item-text {
+        color: blueviolet;
+    }
+}

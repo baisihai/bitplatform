@@ -1,0 +1,156 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitTextInputBase<string?>
+
+<div @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+    <div style="@Styles?.InputWrapper" class="bit-tfl-wrp @Classes?.InputWrapper">
+        @if (LabelTemplate is not null)
+        {
+            <label id="@_labelId" for="@_inputId">
+                @LabelTemplate
+            </label>
+        }
+        else if (Label.HasValue())
+        {
+            <label style="@Styles?.Label"
+                   class="bit-tfl-lbl @Classes?.Label"
+                   id="@_labelId"
+                   for="@_inputId">
+                @Label
+            </label>
+        }
+
+        <div style="@Styles?.FieldGroup" class="bit-tfl-fgp @Classes?.FieldGroup">
+            @if (PrefixTemplate is not null)
+            {
+                @PrefixTemplate
+            }
+            else if (Prefix.HasValue())
+            {
+                <div style="@Styles?.PrefixContainer" class="bit-tfl-pre @Classes?.PrefixContainer">
+                    <span style="@Styles?.Prefix" class="@Classes?.Prefix">
+                        @Prefix
+                    </span>
+                </div>
+            }
+
+            @if (Multiline && Type is null or BitInputType.Text)
+            {
+                <textarea @ref="InputElement" @attributes="InputHtmlAttributes"
+                          @onclick="@HandleOnClick"
+                          @onkeyup="@HandleOnKeyUp"
+                          @onfocus="@HandleOnFocus"
+                          @onkeydown="@HandleOnKeyDown"
+                          @onfocusin="@HandleOnFocusIn"
+                          @onfocusout="@HandleOnFocusOut"
+                          @onchange="@HandleOnStringValueChangeAsync"
+                          @oninput="@HandleOnStringValueInputAsync"
+                          name="@Name"
+                          id="@_inputId"
+                          rows="@(Rows ?? 3)"
+                          tabindex="@TabIndex"
+                          readonly="@ReadOnly"
+                          required="@Required"
+                          style="@Styles?.Input"
+                          autofocus="@AutoFocus"
+                          maxlength="@MaxLength"
+                          inputmode="@_inputMode"
+                          placeholder="@Placeholder"
+                          value="@CurrentValueAsString"
+                          disabled=@(IsEnabled is false)
+                          class="bit-tfl-inp @Classes?.Input"
+                          aria-label="@AriaLabel"
+                          aria-labelledby="@(Label.HasValue() || LabelTemplate is not null ? _labelId : null)"
+                          aria-describedby="@(Description.HasValue() || DescriptionTemplate is not null ? _descriptionId : null)" />
+            }
+            else
+            {
+                <input @ref="@InputElement" @attributes="InputHtmlAttributes"
+                       @onclick="@HandleOnClick"
+                       @onfocus="@HandleOnFocus"
+                       @onkeyup="@HandleOnKeyUp"
+                       @onkeydown="@HandleOnKeyDown"
+                       @onfocusin="@HandleOnFocusIn"
+                       @onfocusout="@HandleOnFocusOut"
+                       @onchange="@HandleOnStringValueChangeAsync"
+                       @oninput="@HandleOnStringValueInputAsync"
+                       name="@Name"
+                       id="@_inputId"
+                       type="@_inputType"
+                       readonly="@ReadOnly"
+                       required="@Required"
+                       tabindex="@TabIndex"
+                       style="@Styles?.Input"
+                       autofocus="@AutoFocus"
+                       maxlength="@MaxLength"
+                       inputmode="@_inputMode"
+                       placeholder="@Placeholder"
+                       autocomplete="@AutoComplete"
+                       value="@CurrentValueAsString"
+                       disabled=@(IsEnabled is false)
+                       class="bit-tfl-inp @Classes?.Input"
+                       aria-label="@AriaLabel"
+                       aria-labelledby="@(Label.HasValue() || LabelTemplate is not null ? _labelId : null)"
+                       aria-describedby="@(Description.HasValue() || DescriptionTemplate is not null ? _descriptionId : null)" />
+            }
+
+            @if (CanRevealPassword && Type == BitInputType.Password)
+            {
+                <button @onclick="ToggleRevealPassword"
+                        style="@Styles?.RevealPassword"
+                        class="bit-tfl-prb @Classes?.RevealPassword"
+                        type="button"
+                        aria-label="@RevealPasswordAriaLabel"
+                        aria-pressed="@(_elementType == BitInputType.Text ? "true" : "false")">
+                    <span style="@Styles?.RevealPasswordIconContainer"
+                          class="bit-tfl-rin @Classes?.RevealPasswordIconContainer">
+                        <i style="@Styles?.RevealPasswordIcon"
+                           class="bit-tfl-ric bit-icon bit-icon--@(_elementType == BitInputType.Text ? "Hide3" : "View") @Classes?.RevealPasswordIcon"
+                           aria-hidden="true" />
+                    </span>
+                </button>
+            }
+
+            @if (IconName.HasValue())
+            {
+                <i style="@Styles?.Icon"
+                   class="bit-tfl-ico bit-icon bit-icon--@IconName @Classes?.Icon"
+                   aria-hidden="true" />
+            }
+
+            @if (SuffixTemplate is not null)
+            {
+                @SuffixTemplate
+            }
+            else if (Suffix.HasValue())
+            {
+                <div style="@Styles?.SuffixContainer" class="bit-tfl-suf @Classes?.SuffixContainer">
+                    <span style="@Styles?.Suffix" class="@Classes?.Suffix">
+                        @Suffix
+                    </span>
+                </div>
+            }
+
+        </div>
+    </div>
+    @if (Description.HasValue() || DescriptionTemplate is not null)
+    {
+        <span style="@Styles?.DescriptionContainer"
+              class="bit-tfl-des @Classes?.DescriptionContainer"
+              id="@_descriptionId">
+            @if (DescriptionTemplate is not null)
+            {
+                @DescriptionTemplate
+            }
+            else if (Description.HasValue())
+            {
+                <span style="@Styles?.Description" class="@Classes?.Description">
+                    @Description
+                </span>
+            }
+        </span>
+    }
+</div>

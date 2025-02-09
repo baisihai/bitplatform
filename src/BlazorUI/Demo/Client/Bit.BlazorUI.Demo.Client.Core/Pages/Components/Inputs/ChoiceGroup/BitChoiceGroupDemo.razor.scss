@@ -1,0 +1,90 @@
+﻿@import '../../../../Styles/abstracts/_functions.scss';
+
+::deep {
+    .example-content {
+        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        &.column {
+            flex-direction: column;
+        }
+    }
+
+    .custom-class {
+        margin-inline: 16px;
+        text-shadow: dodgerblue 0 0 8px;
+    }
+
+    .custom-item {
+        padding: 8px;
+        border-radius: 20px;
+        border: 1px solid gray;
+    }
+
+    .custom-root {
+        margin-inline: 16px;
+    }
+
+    .custom-text {
+        font-weight: bold;
+    }
+
+    .custom-label-wrapper::after {
+        width: 8px;
+        height: 8px;
+        border: none;
+        inset-inline-start: 6px;
+        background-color: whitesmoke;
+    }
+
+    .custom-checked .custom-label-wrapper::after {
+        background-color: whitesmoke;
+    }
+
+    .custom-label-wrapper::before {
+        background-color: whitesmoke;
+    }
+
+    .custom-checked .custom-label-wrapper::before {
+        background-color: dodgerblue;
+    }
+
+    .custom-container {
+        display: flex;
+        gap: rem2(10px);
+        cursor: pointer;
+        align-items: center;
+
+        .custom-circle {
+            width: rem2(20px);
+            height: rem2(20px);
+            border: 1px solid;
+            border-radius: rem2(10px);
+        }
+
+        &:hover {
+            .custom-circle {
+                border-top: rem2(5px) solid #C66;
+                border-left: rem2(5px) solid #66C;
+                border-right: rem2(5px) solid #CC6;
+                border-bottom: rem2(5px) solid #6C6;
+            }
+        }
+
+        &.selected {
+            color: #C66;
+
+            .custom-circle {
+                border-top: rem2(10px) solid #C66;
+                border-left: rem2(10px) solid #66C;
+                border-right: rem2(10px) solid #CC6;
+                border-bottom: rem2(10px) solid #6C6;
+            }
+        }
+    }
+
+    .validation-message {
+        color: red;
+    }
+}

@@ -1,0 +1,35 @@
+﻿::deep {
+    .example-content {
+        gap: 0.5rem;
+        display: flex;
+        flex-flow: column;
+    }
+
+    .custom-class {
+        margin-inline: 1rem;
+        border-radius: 1rem;
+        border-color: tomato;
+        border-width: 0.25rem;
+    }
+
+    .custom-class button {
+        color: tomato;
+        border-color: tomato;
+    }
+
+    .custom-class button:hover {
+        color: unset;
+        background-color: lightcoral;
+    }
+
+    .custom-item {
+        color: peachpuff;
+        background-color: tomato;
+    }
+
+    .custom-btn {
+        color: aliceblue;
+        border-color: aliceblue;
+        background-color: crimson;
+    }
+}

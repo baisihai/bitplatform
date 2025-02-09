@@ -1,0 +1,64 @@
+﻿@page "/contact-us"
+@inherits AppComponentBase
+
+<PageOutlet Url="contact-us"
+            Title="Contact"
+            Description="contact the bit platform" />
+
+<div class="page-container">
+    <section class="page-section">
+        <div class="page-section-content">
+            <BitText Typography="BitTypography.H1" Gutter Class="page-title">Contact us</BitText>
+            <br />
+            <BitText Typography="BitTypography.H5" Gutter>
+                Email: <a href="mailto:info@bitplatform.dev" target="_blank" rel="noopener noreferrer">info@bitplatform.dev</a>
+            </BitText>
+            <br />
+            <BitText Typography="BitTypography.H5" Gutter>
+                Let's talk about your project.
+                <br />
+                Send us an email and we will get back to you.
+            </BitText>
+
+            <br /><br />
+
+            <div class="contact-container">
+                <EditForm Model="contactUsModel" OnValidSubmit="WrapHandled(SendMessage)" class="form" novalidate>
+                    <DataAnnotationsValidator />
+
+                    <BitText Typography="BitTypography.H5" Gutter>
+                        Have any feedbacks?
+
+                    </BitText>
+
+                    <BitTextField @bind-Value="@contactUsModel.Email"
+                                  Label="Email"
+                                  Class="contact-text-field"
+                                  Placeholder="Enter your email address" />
+                    <ValidationMessage For="() => contactUsModel.Email" />
+
+                    <BitTextField @bind-Value="@contactUsModel.Message"
+                                  Required
+                                  Multiline
+                                  Resizable
+                                  Label="Message"
+                                  Class="contact-text-field"
+                                  Placeholder="Enter your message" />
+                    <ValidationMessage For="() => contactUsModel.Message" />
+
+                    <BitStack Horizontal>
+                        <BitButton IsLoading="isSending" ButtonType="BitButtonType.Submit">
+                            Send
+                        </BitButton>
+
+                        <BitButton Title="Reset"
+                                   Variant="BitVariant.Text"
+                                   IconName="@BitIconName.Reset"
+                                   ButtonType="BitButtonType.Button"
+                                   OnClick="() => contactUsModel = new()" />
+                    </BitStack>
+                </EditForm>
+            </div>
+        </div>
+    </section>
+</div>

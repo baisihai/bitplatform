@@ -1,0 +1,60 @@
+﻿.example-content {
+    gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.custom-loading {
+    display: flex;
+    gap: 0.3125rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    max-width: 20rem;
+}
+
+::deep {
+    .custom-class {
+        border-radius: 1rem;
+        border-color: blueviolet;
+        transition: background-color 1s;
+        background: linear-gradient(90deg, magenta, transparent) blue;
+    }
+
+    .custom-class:hover {
+        border-color: magenta;
+        background-color: magenta;
+    }
+
+    .custom-content {
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .custom-root {
+        color: aqua;
+        min-width: 7.2rem;
+        font-weight: bold;
+        border-radius: 1rem;
+        border-color: aqua;
+        box-shadow: aqua 0 0 0.5rem;
+    }
+
+    .custom-root:hover {
+        color: black;
+        background-color: aqua;
+    }
+
+    .custom-container {
+        text-shadow: tomato 0 0 0.5rem;
+    }
+
+    .custom-spinner {
+        border-color: red;
+        border-top-color: goldenrod;
+    }
+}

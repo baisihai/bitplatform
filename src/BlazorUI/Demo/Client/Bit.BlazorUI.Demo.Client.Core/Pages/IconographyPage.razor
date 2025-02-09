@@ -1,0 +1,47 @@
+﻿@page "/iconography"
+
+<PageOutlet Url="iconography"
+            Title="Iconography"
+            Description="iconography of the bit blazorui components" />
+
+<div class="page-container">
+    <BitText Typography="BitTypography.H3" Class="title">Iconography</BitText>
+    <section class="page-section">
+        <BitText Typography="BitTypography.Body1">
+            bit BlazorUI has traditionally used a custom font for its iconography. This font is part of the MDL2 design system and contains glyphs that you can scale, color, and style in any way.
+        </BitText>
+    </section>
+    <section class="page-section">
+        <BitText Typography="BitTypography.Body1">
+            <b>Note:</b> To use these Icons, you need to add the <b>Bit.BlazorUI.Icons</b> nuget package to your project as described in the Optional steps of the <BitLink Href="/getting-started">Getting started</BitLink> page.
+        </BitText>
+    </section>
+    <section class="page-section">
+        <BitText Typography="BitTypography.H4" Gutter>Available icons</BitText>
+        <BitSearchBox Immediate
+                      DebounceTime="300"
+                      OnClear="HandleClear"
+                      OnChange="HandleChange"
+                      Placeholder="Search icons"
+                      IconName="@BitIconName.Search"
+                      Class="iconography-search-box" />
+        <div class="icon-list">
+            @if (filteredIcons.Count == 0)
+            {
+                <div class="empty-list">
+                    <BitText Typography="BitTypography.H4">No result</BitText>
+                </div>
+            }
+            else
+            {
+                foreach (var icon in filteredIcons)
+                {
+                    <div class="icon-box">
+                        <i class="bit-icon bit-icon--iconography bit-icon--@icon"></i>
+                        <span class="icon-name">@icon</span>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+</div>

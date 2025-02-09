@@ -1,0 +1,61 @@
+@namespace Bit.BlazorUI
+
+<div class="bitdatagrid-paginator">
+    @if (Value.TotalItemCount.HasValue)
+    {
+        <div class="summary">
+            @if (SummaryTemplate is not null)
+            {
+                @SummaryTemplate(Value)
+            }
+            else if (SummaryFormat is not null)
+            {
+                <text>@SummaryFormat(Value)</text>
+            }
+            else
+            {
+                <text><strong>@Value.TotalItemCount</strong> items</text>
+            }
+        </div>
+        <nav role="navigation">
+            <button type="button"
+                    class="go-first"
+                    @onclick="GoFirstAsync"
+                    disabled="@(!CanGoBack)"
+                    title="@GoToFirstButtonTitle"
+                    aria-title="@GoToFirstButtonTitle" />
+            <button type="button"
+                    class="go-previous"
+                    @onclick="GoPreviousAsync"
+                    disabled="@(!CanGoBack)"
+                    title="@GoToPrevButtonTitle"
+                    aria-title="@GoToPrevButtonTitle" />
+            <div class="pagination-text">
+                @if (TextTemplate is not null)
+                {
+                    @TextTemplate(Value)
+                }
+                else if (TextFormat is not null)
+                {
+                    <span>@TextFormat(Value)</span>
+                }
+                else
+                {
+                    <span>Page <b>@(Value.CurrentPageIndex + 1)</b> of <b>@(Value.LastPageIndex + 1)</b></span>
+                }
+            </div>
+            <button type="button"
+                    class="go-next"
+                    @onclick="GoNextAsync"
+                    disabled="@(!CanGoForwards)"
+                    title="@GoToNextButtonTitle"
+                    aria-title="@GoToNextButtonTitle" />
+            <button type="button"
+                    class="go-last"
+                    @onclick="GoLastAsync"
+                    disabled="@(!CanGoForwards)"
+                    title="@GoToLastButtonTitle"
+                    aria-title="@GoToLastButtonTitle" />
+        </nav>
+    }
+</div>

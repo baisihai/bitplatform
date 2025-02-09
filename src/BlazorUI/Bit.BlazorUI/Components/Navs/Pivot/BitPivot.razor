@@ -1,0 +1,28 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+<div @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     role="toolbar"
+     aria-label="@AriaLabel"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+
+    <CascadingValue Value="this" IsFixed="true">
+        <div style="@Styles?.Header" class="bit-pvt-hct @Classes?.Header" role="tablist">
+            @ChildContent
+        </div>
+    </CascadingValue>
+
+    @if (HeaderOnly is false)
+    {
+        <div role="tabpanel"
+             aria-hidden="false"
+             style="@GetSelectedItemStyle()"
+             aria-labelledby="@(_selectedItem?._Id)"
+             class="bit-pvt-cct @GetSelectedItemClass()">
+            @(_selectedItem?.Body ?? _selectedItem?.ChildContent)
+        </div>
+    }
+</div>

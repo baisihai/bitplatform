@@ -1,0 +1,29 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+<div @ref="RootElement" @attributes="@HtmlAttributes"
+     class="@ClassBuilder.Value"
+     style="@StyleBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+    @if (Loaded)
+    {
+        <div style="@Styles?.Content" class="bit-smr-cnt @Classes?.Content">
+            @(ChildContent ?? Content)
+        </div>
+    }
+    else
+    {
+        @if (Template is not null)
+        {
+            @Template
+        }
+        else
+        {
+            <div style="@Styles?.ShimmerWrapper"
+                 class="bit-smr-wrp @GetWrapperClass() @Classes?.ShimmerWrapper">
+                <div style="@Styles?.Shimmer @GetAnimationStyle()"
+                     class="bit-smr-anm @GetAnimationClass() @Classes?.Shimmer"></div>
+            </div>
+        }
+    }
+</div>

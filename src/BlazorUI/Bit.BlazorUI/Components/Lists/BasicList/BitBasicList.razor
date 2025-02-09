@@ -1,0 +1,48 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+@typeparam TItem
+
+<div @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()"
+     role="@Role">
+
+    @if (EnableVirtualization)
+    {
+        if (ItemsProvider is null)
+        {
+            <_BitBasicListVirtualize Items="Items"
+                                     ItemSize="@ItemSize"
+                                     OverscanCount="@OverscanCount"
+                                     EmptyContent="EmptyContent">
+                @RowTemplate(context)
+            </_BitBasicListVirtualize>
+        }
+        else
+        {
+            <_BitBasicListVirtualize @ref="_bitBasicListVirtualizeRef"
+                                     OverscanCount="@OverscanCount"
+                                     Placeholder="VirtualizePlaceholder"
+                                     ItemsProvider="ProvideVirtualizedItems"
+                                     EmptyContent="EmptyContent">
+                @RowTemplate(context)
+            </_BitBasicListVirtualize>
+        }
+    }
+    else
+    {
+        if (Items.Count > 0)
+        {
+            foreach (var item in Items)
+            {
+                @RowTemplate(item)
+            }
+        }
+        else
+        {
+            @EmptyContent
+        }
+    }
+</div>

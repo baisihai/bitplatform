@@ -1,0 +1,15 @@
+﻿@inherits AppComponentBase
+
+<ul class="side-rail">
+    <li><b>On this page</b></li>
+    @foreach (var item in _items)
+    {
+        <li>
+            <BitLink OnClick="@(() => ScrollToItem(item))" NoUnderline>
+                <BitText Typography="BitTypography.Body2" Style="text-align: start;">
+                    @item.Title
+                </BitText>
+            </BitLink>
+        </li>
+    }
+</ul>

@@ -1,0 +1,181 @@
+﻿@import "../../../Styles/functions.scss";
+
+.bit-acb {
+    border: none;
+    display: flex;
+    cursor: pointer;
+    gap: spacing(1);
+    color: $clr-fg-pri;
+    align-items: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    justify-content: center;
+    font-family: $tg-font-family;
+    font-weight: $tg-font-weight;
+    background-color: transparent;
+    padding: var(--bit-acb-padding);
+    font-size: var(--bit-acb-fontsize);
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--bit-acb-clr-hover);
+            --bit-acb-clr-ico: var(--bit-acb-clr-hover);
+        }
+    }
+
+    &:active {
+        color: var(--bit-acb-clr-active);
+        --bit-acb-clr-ico: var(--bit-acb-clr-active);
+    }
+
+    &.bit-dis {
+        cursor: default;
+        color: $clr-fg-dis;
+        pointer-events: none;
+        --bit-acb-clr-ico: #{$clr-fg-dis};
+    }
+}
+
+.bit-acb-ico {
+    color: var(--bit-acb-clr-ico);
+}
+
+.bit-acb-con {
+    flex-grow: 1;
+    display: flex;
+}
+
+.bit-acb-rvi {
+    flex-direction: row-reverse;
+}
+
+.bit-acb-fwi {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+
+.bit-acb-pri {
+    --bit-acb-clr-ico: #{$clr-pri};
+    --bit-acb-clr-hover: #{$clr-pri-hover};
+    --bit-acb-clr-active: #{$clr-pri-active};
+}
+
+.bit-acb-sec {
+    --bit-acb-clr-ico: #{$clr-sec};
+    --bit-acb-clr-hover: #{$clr-sec-hover};
+    --bit-acb-clr-active: #{$clr-sec-active};
+}
+
+.bit-acb-ter {
+    --bit-acb-clr-ico: #{$clr-ter};
+    --bit-acb-clr-hover: #{$clr-ter-hover};
+    --bit-acb-clr-active: #{$clr-ter-active};
+}
+
+.bit-acb-inf {
+    --bit-acb-clr-ico: #{$clr-inf};
+    --bit-acb-clr-hover: #{$clr-inf-hover};
+    --bit-acb-clr-active: #{$clr-inf-active};
+}
+
+.bit-acb-suc {
+    --bit-acb-clr-ico: #{$clr-suc};
+    --bit-acb-clr-hover: #{$clr-suc-hover};
+    --bit-acb-clr-active: #{$clr-suc-active};
+}
+
+.bit-acb-wrn {
+    --bit-acb-clr-ico: #{$clr-wrn};
+    --bit-acb-clr-hover: #{$clr-wrn-hover};
+    --bit-acb-clr-active: #{$clr-wrn-active};
+}
+
+.bit-acb-swr {
+    --bit-acb-clr-ico: #{$clr-swr};
+    --bit-acb-clr-hover: #{$clr-swr-hover};
+    --bit-acb-clr-active: #{$clr-swr-active};
+}
+
+.bit-acb-err {
+    --bit-acb-clr-ico: #{$clr-err};
+    --bit-acb-clr-hover: #{$clr-err-hover};
+    --bit-acb-clr-active: #{$clr-err-active};
+}
+
+.bit-acb-err {
+    --bit-acb-clr-ico: #{$clr-err};
+    --bit-acb-clr-hover: #{$clr-err-hover};
+    --bit-acb-clr-active: #{$clr-err-active};
+}
+
+
+.bit-acb-pbg {
+    --bit-acb-clr-ico: #{$clr-bg-pri};
+    --bit-acb-clr-hover: #{$clr-bg-pri-hover};
+    --bit-acb-clr-active: #{$clr-bg-pri-active};
+}
+
+.bit-acb-sbg {
+    --bit-acb-clr-ico: #{$clr-bg-sec};
+    --bit-acb-clr-hover: #{$clr-bg-sec-hover};
+    --bit-acb-clr-active: #{$clr-bg-sec-active};
+}
+
+.bit-acb-tbg {
+    --bit-acb-clr-ico: #{$clr-bg-ter};
+    --bit-acb-clr-hover: #{$clr-bg-ter-hover};
+    --bit-acb-clr-active: #{$clr-bg-ter-active};
+}
+
+.bit-acb-pfg {
+    --bit-acb-clr-ico: #{$clr-fg-pri};
+    --bit-acb-clr-hover: #{$clr-fg-pri-hover};
+    --bit-acb-clr-active: #{$clr-fg-pri-active};
+}
+
+.bit-acb-sfg {
+    --bit-acb-clr-ico: #{$clr-fg-sec};
+    --bit-acb-clr-hover: #{$clr-fg-sec-hover};
+    --bit-acb-clr-active: #{$clr-fg-sec-active};
+}
+
+.bit-acb-tfg {
+    --bit-acb-clr-ico: #{$clr-fg-ter};
+    --bit-acb-clr-hover: #{$clr-fg-ter-hover};
+    --bit-acb-clr-active: #{$clr-fg-ter-active};
+}
+
+.bit-acb-pbr {
+    --bit-acb-clr-ico: #{$clr-brd-pri};
+    --bit-acb-clr-hover: #{$clr-brd-pri-hover};
+    --bit-acb-clr-active: #{$clr-brd-pri-active};
+}
+
+.bit-acb-sbr {
+    --bit-acb-clr-ico: #{$clr-brd-sec};
+    --bit-acb-clr-hover: #{$clr-brd-sec-hover};
+    --bit-acb-clr-active: #{$clr-brd-sec-active};
+}
+
+.bit-acb-tbr {
+    --bit-acb-clr-ico: #{$clr-brd-ter};
+    --bit-acb-clr-hover: #{$clr-brd-ter-hover};
+    --bit-acb-clr-active: #{$clr-brd-ter-active};
+}
+
+
+.bit-acb-sm {
+    --bit-acb-fontsize: #{spacing(1.25)};
+    --bit-acb-padding: #{spacing(0.50)} #{spacing(1)};
+}
+
+.bit-acb-md {
+    --bit-acb-fontsize: #{spacing(1.75)};
+    --bit-acb-padding: #{spacing(0.75)} #{spacing(1.5)};
+}
+
+.bit-acb-lg {
+    --bit-acb-fontsize: #{spacing(2.25)};
+    --bit-acb-padding: #{spacing(1.00)} #{spacing(2.00)};
+}

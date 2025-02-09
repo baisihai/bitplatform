@@ -1,0 +1,24 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+<div @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     role="dialog"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+
+    @if (IsOpen && Modeless is false)
+    {
+        <div @onclick="OnOverlayClicked"
+             aria-hidden="true" 
+             style="@Styles?.Overlay" 
+             class="bit-pnl-ovl @Classes?.Overlay" />
+    }
+
+    <div id="@_containerId"
+         style="@GetContainerCssStyles()"
+         class="@GetContainerCssClasses()">
+        @ChildContent
+    </div>
+</div>

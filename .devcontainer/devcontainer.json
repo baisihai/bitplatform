@@ -1,0 +1,37 @@
+{
+    "name": "bit platform",
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "onCreateCommand": "wget https://download.visualstudio.microsoft.com/download/pr/0e717d01-aad7-475a-8b67-50c59cf043b1/6eaa1c636e15ec8e1b97b3438360c770/dotnet-sdk-9.0.102-linux-x64.tar.gz -O $HOME/dotnet.tar.gz && export DOTNET_ROOT=$HOME/.dotnet && mkdir -p \"$DOTNET_ROOT\" && tar zxf $HOME/dotnet.tar.gz -C \"$DOTNET_ROOT\" && export PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH && find . -type f -name '*.csproj' -exec sed -i 's/Microsoft.NET.Sdk.BlazorWebAssembly/Microsoft.NET.Sdk.Web/g' {} \\;",
+    "waitFor": "onCreateCommand",
+    "customizations": {
+        "codespaces": {
+            "openFiles": [
+                "CONTRIBUTING.md"
+            ]
+        },
+        "vscode": {
+            "extensions": [
+                "glenn2223.live-sass"
+            ]
+        }
+    },
+    "forwardPorts": [
+        4000,
+        4001,
+        5000,
+        5001,
+        4030,
+        4031,
+        4040,
+        4041,
+        5030,
+        5031,
+        5040,
+        5041
+    ],
+    "remoteEnv": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+    }
+}

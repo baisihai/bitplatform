@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFrameworks>net9.0;net8.0</TargetFrameworks>
+		<IsPackable>false</IsPackable>
+        <LangVersion>13.0</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Include="..\Bit.BlazorUI\Components\Inputs\_Pickers\ColorPicker\BitInternalColor.cs" Link="Components\Inputs\ColorPicker\BitInternalColor.cs" />
+	  <Compile Include="..\Bit.BlazorUI\Extensions\EnumExtensions.cs" Link="Extensions\EnumExtensions.cs" />
+	  <Compile Include="..\Bit.BlazorUI\Extensions\StringExtensions.cs" Link="Extensions\StringExtensions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="bunit.web" Version="1.38.5" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.7.3" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.7.3" />
+		<PackageReference Include="coverlet.collector" Version="6.0.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+        <ProjectReference Include="..\Bit.BlazorUI\Bit.BlazorUI.csproj" />
+        <ProjectReference Include="..\Bit.BlazorUI.Extras\Bit.BlazorUI.Extras.csproj" />
+	</ItemGroup>
+
+</Project>

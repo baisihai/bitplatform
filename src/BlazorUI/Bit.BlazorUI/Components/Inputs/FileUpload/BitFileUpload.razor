@@ -1,0 +1,48 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitComponentBase
+
+<div @ref="@RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+
+    @if (LabelTemplate is not null)
+    {
+        @LabelTemplate
+    }
+    else if (Label.HasValue())
+    {
+        <button class="bit-upl-lbl" @onclick="Browse">@Label</button>
+    }
+
+    <input @ref="_inputRef" @onchange="HandleOnChange"
+           type="file"
+           id="@InputId"
+           class="bit-upl-fi"
+           multiple="@Multiple"
+           disabled="@(IsEnabled is false)"
+           aria-labelledby="@(Label.HasValue() ? Label : null)"
+           accept="@(Accept ?? string.Join(",", AllowedExtensions))" />
+
+    @if (Files is not null)
+    {
+        <div class="bit-upl-fl">
+            @for (var i = 0; i < Files.Count; i++)
+            {
+                var index = i;
+                var file = Files[index];
+                file.Index = index;
+
+                if (FileViewTemplate is not null)
+                {
+                    @FileViewTemplate(file)
+                }
+                else
+                {
+                    <_BitFileUploadItem FileUpload="this" Item="file" />
+                }
+            }
+        </div>
+    }
+</div>

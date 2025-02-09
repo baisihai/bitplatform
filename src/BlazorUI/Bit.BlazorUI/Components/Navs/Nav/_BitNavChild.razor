@@ -1,0 +1,191 @@
+﻿@namespace Bit.BlazorUI
+@typeparam TItem
+
+<li role="listitem" style="@Nav.GetStyle(Item)" class="@Nav.GetClass(Item)">
+    @{
+        var template = Nav.GetTemplate(Item);
+        var templateRenderMode = Nav.GetTemplateRenderMode(Item);
+        var isEnabled = Nav.GetIsEnabled(Item);
+        var isExpanded = Nav.GetItemExpanded(Item);
+        var isSeparator = Nav.GetIsSeparator(Item);
+        var colAriaLabel = Nav.GetCollapseAriaLabel(Item);
+        var expAriaLabel = Nav.GetExpandAriaLabel(Item);
+        var text = Nav.GetText(Item);
+        var childItems = Nav.GetChildItems(Item);
+        var description = Nav.GetDescription(Item);
+        var iconName = Nav.GetIconName(Item);
+        var url = Nav.GetUrl(Item);
+        var title = Nav.GetTitle(Item);
+        var target = Nav.GetTarget(Item);
+        var renderLink = url.HasValue() || Nav.GetForceAnchor(Item);
+        var href = (isEnabled && (Nav.SelectedItem != Item || Nav.Reselectable)) ? url : null;
+    }
+
+    @if (Nav.RenderType is BitNavRenderType.Grouped && Parent is null)
+    {
+        @if (isSeparator)
+        {
+            if (template is not null)
+            {
+                @template(Item)
+            }
+            else
+            {
+                <div class="bit-nav-sep @Nav.Classes?.Separator" style="@Nav.Styles?.Separator"></div>
+            }
+        }
+        else if (template is not null && templateRenderMode is BitNavItemTemplateRenderMode.Replace)
+        {
+            @template(Item)
+        }
+        else if (Nav.HeaderTemplate is not null && Nav.HeaderTemplateRenderMode is BitNavItemTemplateRenderMode.Replace)
+        {
+            @Nav.HeaderTemplate(Item)
+        }
+        else
+        {
+            <button @onclick="ToggleItem"
+                    tabindex="0"
+                    type="button"
+                    class="bit-nav-gcb"
+                    aria-expanded="@(isExpanded ? "true" : "false")"
+                    aria-label="@(isEnabled ? colAriaLabel : expAriaLabel)">
+                @if (template is not null)
+                {
+                    @template(Item)
+                }
+                else if (Nav.HeaderTemplate is not null)
+                {
+                    @Nav.HeaderTemplate(Item)
+                }
+                else
+                {
+                    if (description.HasValue())
+                    {
+                        <div class="bit-nav-itg">
+                            <div class="bit-nav-iit" style="@(Nav.ReversedChevron ? "flex-flow:row-reverse" : null)">
+                                <i class="bit-icon bit-icon--@(Nav.ChevronDownIcon ?? "ChevronRight") @(Nav.ChevronDownIcon.HasNoValue() && isExpanded ? "bit-nav-exp" : "bit-ico-r90")" aria-hidden="true" />
+                                <span class="bit-nav-ghd">@text</span>
+                            </div>
+                            <div title="@description"
+                                 class="bit-nav-des @Nav.Classes?.Description"
+                                 style="@(Nav.ReversedChevron ? "padding-inline-start:0" : ""); @Nav.Styles?.Description">
+                                @description
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="bit-nav-iit" style="@(Nav.ReversedChevron ? "flex-flow:row-reverse" : null)">
+                            <i class="bit-icon bit-icon--@(Nav.ChevronDownIcon ?? "ChevronRight") @(Nav.ChevronDownIcon.HasNoValue() && isExpanded ? "bit-nav-exp" : "bit-ico-r90")" aria-hidden="true" />
+                            <span class="bit-nav-ghd">@text</span>
+                        </div>
+                    }
+                }
+            </button>
+        }
+    }
+    else
+    {
+        @if (isSeparator)
+        {
+            if (template is not null)
+            {
+                @template(Item)
+            }
+            else
+            {
+                <div style="@Nav.Styles?.Separator" class="bit-nav-sep @Nav.Classes?.Separator"></div>
+            }
+        }
+        else
+        {
+            var padding = Nav.IconOnly ? 0
+            : Depth * Nav.IndentValue + (Nav.ReversedChevron ? Nav.IndentReversedPadding : (childItems.Any() ? 0 : Nav.IndentPadding));
+
+            var desPadding = Nav.ReversedChevron is false && childItems.Any() ? Nav.IndentPadding : 0;
+
+
+            @if (template is not null && templateRenderMode is BitNavItemTemplateRenderMode.Replace)
+            {
+                @template(Item)
+            }
+            else if (Nav.ItemTemplate is not null && Nav.ItemTemplateRenderMode is BitNavItemTemplateRenderMode.Replace)
+            {
+                @Nav.ItemTemplate(Item)
+            }
+            else
+            {
+                <_BitNavItemContainer Href="@href"
+                                      Target="@target"
+                                      OnClick="() => HandleOnClick(renderLink)"
+                                      RenderLink="renderLink"
+                                      Disabled="@(isEnabled is false)"
+                                      AriaLabel="@Nav.GetAriaLabel(Item)"
+                                      Title="@(title is not null ? title : text)"
+                                      Class="@($"bit-nav-ict {GetItemContainerClasses()}")"
+                                      Style="@($"padding-inline-start:{padding}px;{GetItemContainerStyles()}")"
+                                      AriaCurrent="@(Item == Nav.SelectedItem ? _AriaCurrentMap[Nav.GetAriaCurrent(Item)] : null)"
+                                      Rel="@(url.HasValue() && target.HasValue() && IsRelativeUrl(url!) is false ? "noopener noreferrer" : null)">
+                    <div class="bit-nav-mct" style="@(Nav.ReversedChevron ? "flex-flow:row-reverse" : null)">
+                        @if (childItems.Any() && Nav.IconOnly is false)
+                        {
+                            <div @onclick="ToggleItem"
+                                 @onclick:preventDefault="true"
+                                 @onclick:stopPropagation="true"
+                                 tabindex="0"
+                                 type="button"
+                                 style="@Nav.Styles?.ToggleButton"
+                                 class="bit-nav-cbt @Nav.Classes?.ToggleButton"
+                                 aria-expanded="@(isExpanded ? "true" : "false")"
+                                 aria-label="@(isExpanded ? colAriaLabel : expAriaLabel)">
+                                <i class="bit-icon bit-icon--@(Nav.ChevronDownIcon ?? "ChevronRight") @(Nav.ChevronDownIcon.HasNoValue() && isExpanded ? "bit-nav-exp" : "bit-ico-r90")" aria-hidden="true" />
+                            </div>
+                        }
+                        <div style="@GetItemStyles()"
+                             class="bit-nav-itm @GetItemClasses()">
+                            @if (template is not null)
+                            {
+                                @template(Item)
+                            }
+                            else if (Nav.ItemTemplate is not null)
+                            {
+                                @Nav.ItemTemplate(Item)
+                            }
+                            else
+                            {
+                                @if (iconName.HasValue())
+                                {
+                                    <i style="@Nav.Styles?.ItemIcon" class="bit-nav-iic bit-icon bit-icon--@iconName @Nav.Classes?.ItemIcon" aria-hidden="true" />
+                                }
+                                <span style="@Nav.Styles?.ItemText" class="bit-nav-itx @Nav.Classes?.ItemText">@text</span>
+                            }
+                        </div>
+                    </div>
+
+                    @if (description.HasValue() && Nav.IconOnly is false)
+                    {
+                        <div title="@description"
+                             class="bit-nav-des @Nav.Classes?.Description"
+                             style="padding-inline-start:@(desPadding)px;@Nav.Styles?.Description">
+                            @description
+                        </div>
+                    }
+                </_BitNavItemContainer>
+            }
+        }
+    }
+
+    @if ((childItems.Any()) && (isExpanded))
+    {
+        <ul role="list">
+            <CascadingValue Value="this" IsFixed="true">
+                @foreach (var (item, idx) in childItems.Select((item, idx) => (item, idx)))
+                {
+                    var key = Nav.GetItemKey(item, $"{Key}-{idx}");
+                    <_BitNavChild @key="@key" Key="@key" Item="item" Depth="Depth + 1" />
+                }
+            </CascadingValue>
+        </ul>
+    }
+</li>

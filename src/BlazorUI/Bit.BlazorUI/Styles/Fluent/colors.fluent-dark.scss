@@ -1,0 +1,164 @@
+﻿:root[bit-theme="dark"],
+:root[bit-theme="fluent-dark"] {
+    color-scheme: dark;
+    //primary
+    --bit-clr-pri: #569FFF;
+    --bit-clr-pri-hover: #4D8FE5;
+    --bit-clr-pri-active: #457FCC;
+    --bit-clr-pri-dark: #367FE0;
+    --bit-clr-pri-dark-hover: #3379D5;
+    --bit-clr-pri-dark-active: #3172CA;
+    --bit-clr-pri-light: #89BCFF;
+    --bit-clr-pri-light-hover: #78B2FF;
+    --bit-clr-pri-light-active: #67A9FF;
+    --bit-clr-pri-text: #212121;
+    //secondary
+    --bit-clr-sec: #FF9E67;
+    --bit-clr-sec-hover: #E58E5D;
+    --bit-clr-sec-active: #CC7E52;
+    --bit-clr-sec-dark: #EB7F42;
+    --bit-clr-sec-dark-hover: #DF793F;
+    --bit-clr-sec-dark-active: #D3723B;
+    --bit-clr-sec-light: #FFBB95;
+    --bit-clr-sec-light-hover: #FFB185;
+    --bit-clr-sec-light-active: #FFA876;
+    --bit-clr-sec-text: #212121;
+    //tertiary
+    --bit-clr-ter: #E6E6E6;
+    --bit-clr-ter-hover: #CFCFCF;
+    --bit-clr-ter-active: #B8B8B8;
+    --bit-clr-ter-dark: #A3A3A3;
+    --bit-clr-ter-dark-hover: #9B9B9B;
+    --bit-clr-ter-dark-active: #939393;
+    --bit-clr-ter-light: #F3F3F3;
+    --bit-clr-ter-light-hover: #EBEBEB;
+    --bit-clr-ter-light-active: #E9E9E9;
+    --bit-clr-ter-text: #212121;
+    //info
+    --bit-clr-inf: #ABACAE;
+    --bit-clr-inf-hover: #9A9B9D;
+    --bit-clr-inf-active: #898A8B;
+    --bit-clr-inf-dark: #7B7F87;
+    --bit-clr-inf-dark-hover: #757980;
+    --bit-clr-inf-dark-active: #6F7279;
+    --bit-clr-inf-light: #CDCDCE;
+    --bit-clr-inf-light-hover: #BCBDBE;
+    --bit-clr-inf-light-active: #B3B4B6;
+    --bit-clr-inf-text: #212121;
+    //success
+    --bit-clr-suc: #7FB58A;
+    --bit-clr-suc-hover: #72A37C;
+    --bit-clr-suc-active: #66916E;
+    --bit-clr-suc-dark: #50995F;
+    --bit-clr-suc-dark-hover: #4C915A;
+    --bit-clr-suc-dark-active: #488A55;
+    --bit-clr-suc-light: #A5CBAD;
+    --bit-clr-suc-light-hover: #99C4A1;
+    --bit-clr-suc-light-active: #8CBC96;
+    --bit-clr-suc-text: #212121;
+    //warning
+    --bit-clr-wrn: #FFD07A;
+    --bit-clr-wrn-hover: #E5BB6E;
+    --bit-clr-wrn-active: #CCA662;
+    --bit-clr-wrn-dark: #D6A242;
+    --bit-clr-wrn-dark-hover: #CB9A3F;
+    --bit-clr-wrn-dark-active: #C1923B;
+    --bit-clr-wrn-light: #FFDEA2;
+    --bit-clr-wrn-light-hover: #FFD995;
+    --bit-clr-wrn-light-active: #FFD587;
+    --bit-clr-wrn-text: #212121;
+    //severe-warning
+    --bit-clr-swr: #E8A874;
+    --bit-clr-swr-hover: #D19768;
+    --bit-clr-swr-active: #BA865D;
+    --bit-clr-swr-dark: #D17E3B;
+    --bit-clr-swr-dark-hover: #C77838;
+    --bit-clr-swr-dark-active: #BC7135;
+    --bit-clr-swr-light: #EFC29E;
+    --bit-clr-swr-light-hover: #EDB990;
+    --bit-clr-swr-light-active: #EAB182;
+    --bit-clr-swr-text: #212121;
+    //error
+    --bit-clr-err: #DC7C7C;
+    --bit-clr-err-hover: #C67070;
+    --bit-clr-err-active: #B06363;
+    --bit-clr-err-dark: #CC5454;
+    --bit-clr-err-dark-hover: #C25050;
+    --bit-clr-err-dark-active: #B84C4C;
+    --bit-clr-err-light: #E7A3A3;
+    --bit-clr-err-light-hover: #E39696;
+    --bit-clr-err-light-active: #E08989;
+    --bit-clr-err-text: #212121;
+    //foregrounds
+    --bit-clr-fg-pri: #F6F7F8;
+    --bit-clr-fg-pri-hover: #DEDFE0;
+    --bit-clr-fg-pri-active: #CACBCC;
+    --bit-clr-fg-sec: #ADB5BF;
+    --bit-clr-fg-sec-hover: #9DA4AD;
+    --bit-clr-fg-sec-active: #8B9199;
+    --bit-clr-fg-ter: #616973;
+    --bit-clr-fg-ter-hover: #565D66;
+    --bit-clr-fg-ter-active: #4B5159;
+    --bit-clr-fg-dis: #343b42;
+    //backgrounds
+    --bit-clr-bg-pri: #010409;
+    --bit-clr-bg-pri-hover: #0E141B;
+    --bit-clr-bg-pri-active: #0C141D;
+    --bit-clr-bg-sec: #101419;
+    --bit-clr-bg-sec-hover: #1C222B;
+    --bit-clr-bg-sec-active: #202731;
+    --bit-clr-bg-ter: #181F26;
+    --bit-clr-bg-ter-hover: #1B232B;
+    --bit-clr-bg-ter-active: #202A33;
+    --bit-clr-bg-dis: #222;
+    --bit-clr-bg-overlay: rgba(255, 255, 255, 0.2);
+    //borders
+    --bit-clr-brd-pri: #697480;
+    --bit-clr-brd-pri-hover: #92A2B2;
+    --bit-clr-brd-pri-active: #A7B9CC;
+    --bit-clr-brd-sec: #38424D;
+    --bit-clr-brd-sec-hover: #5E6F80;
+    --bit-clr-brd-sec-active: #718599;
+    --bit-clr-brd-ter: #232933;
+    --bit-clr-brd-ter-hover: #465266;
+    --bit-clr-brd-ter-active: #586780;
+    --bit-clr-brd-dis: #21262D;
+    //req
+    --bit-clr-req: #A4262C;
+    // shadows-callout
+    --bit-shd-cal: 0px 0px 5px 0px rgba(255, 255, 255, 0.2), 0px 0px 2px 0px rgba(255, 255, 255, 0.1);
+    --bit-shd-cal2: 0px 0px 7px 0px rgba(255, 255, 255, 0.35), 0px 0px 3px 0px rgba(255, 255, 255, 0.2);
+    // shadow sizes
+    --bit-shd-sm: 0 1px 2px 0 rgb(255 255 255 / 0.05);
+    --bit-shd-nm: 0 1px 3px 0 rgb(255 255 255 / 0.1), 0 1px 2px -1px rgb(255 255 255 / 0.1);
+    --bit-shd-md: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.1);
+    --bit-shd-lg: 0 10px 15px -3px rgb(255 255 255 / 0.1), 0 4px 6px -4px rgb(255 255 255 / 0.1);
+    --bit-shd-xl: 0 20px 25px -5px rgb(255 255 255 / 0.1), 0 8px 10px -6px rgb(255 255 255 / 0.1);
+    --bit-shd-2xl: 0 25px 50px -12px rgb(255 255 255 / 0.25);
+    --bit-shd-inner: inset 0 2px 4px 0 rgb(255 255 255 / 0.05);
+    // shadows
+    --bit-shd-1: 0px 2px 1px -1px rgba(255, 255, 255, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.14), 0px 1px 3px 0px rgba(255, 255, 255, 0.12);
+    --bit-shd-2: 0px 3px 1px -2px rgba(255, 255, 255, 0.2), 0px 2px 2px 0px rgba(255, 255, 255, 0.14), 0px 1px 5px 0px rgba(255, 255, 255, 0.12);
+    --bit-shd-3: 0px 3px 3px -2px rgba(255, 255, 255, 0.2), 0px 3px 4px 0px rgba(255, 255, 255, 0.14), 0px 1px 8px 0px rgba(255, 255, 255, 0.12);
+    --bit-shd-4: 0px 2px 4px -1px rgba(255, 255, 255, 0.2), 0px 4px 5px 0px rgba(255, 255, 255, 0.14), 0px 1px 10px 0px rgba(255, 255, 255, 0.12);
+    --bit-shd-5: 0px 3px 5px -1px rgba(255, 255, 255, 0.2), 0px 5px 8px 0px rgba(255, 255, 255, 0.14), 0px 1px 14px 0px rgba(255, 255, 255, 0.12);
+    --bit-shd-6: 0px 3px 5px -1px rgba(255, 255, 255, 0.2), 0px 6px 10px 0px rgba(255, 255, 255, 0.14), 0px 1px 18px 0px rgba(255, 255, 255, 0.12);
+    --bit-shd-7: 0px 4px 5px -2px rgba(255, 255, 255, 0.2), 0px 7px 10px 1px rgba(255, 255, 255, 0.14), 0px 2px 16px 1px rgba(255, 255, 255, 0.12);
+    --bit-shd-8: 0px 5px 5px -3px rgba(255, 255, 255, 0.2), 0px 8px 10px 1px rgba(255, 255, 255, 0.14), 0px 3px 14px 2px rgba(255, 255, 255, 0.12);
+    --bit-shd-9: 0px 5px 6px -3px rgba(255, 255, 255, 0.2), 0px 9px 12px 1px rgba(255, 255, 255, 0.14), 0px 3px 16px 2px rgba(255, 255, 255, 0.12);
+    --bit-shd-10: 0px 6px 6px -3px rgba(255, 255, 255, 0.2), 0px 10px 14px 1px rgba(255, 255, 255, 0.14), 0px 4px 18px 3px rgba(255, 255, 255, 0.12);
+    --bit-shd-11: 0px 6px 7px -4px rgba(255, 255, 255, 0.2), 0px 11px 15px 1px rgba(255, 255, 255, 0.14), 0px 4px 20px 3px rgba(255, 255, 255, 0.12);
+    --bit-shd-12: 0px 7px 8px -4px rgba(255, 255, 255, 0.2), 0px 12px 17px 2px rgba(255, 255, 255, 0.14), 0px 5px 22px 4px rgba(255, 255, 255, 0.12);
+    --bit-shd-13: 0px 7px 8px -4px rgba(255, 255, 255, 0.2), 0px 13px 19px 2px rgba(255, 255, 255, 0.14), 0px 5px 24px 4px rgba(255, 255, 255, 0.12);
+    --bit-shd-14: 0px 7px 9px -4px rgba(255, 255, 255, 0.2), 0px 14px 21px 2px rgba(255, 255, 255, 0.14), 0px 5px 26px 4px rgba(255, 255, 255, 0.12);
+    --bit-shd-15: 0px 8px 9px -5px rgba(255, 255, 255, 0.2), 0px 15px 22px 2px rgba(255, 255, 255, 0.14), 0px 6px 28px 5px rgba(255, 255, 255, 0.12);
+    --bit-shd-16: 0px 8px 10px -5px rgba(255, 255, 255, 0.2), 0px 16px 24px 2px rgba(255, 255, 255, 0.14), 0px 6px 30px 5px rgba(255, 255, 255, 0.12);
+    --bit-shd-17: 0px 8px 11px -5px rgba(255, 255, 255, 0.2), 0px 17px 26px 2px rgba(255, 255, 255, 0.14), 0px 6px 32px 5px rgba(255, 255, 255, 0.12);
+    --bit-shd-18: 0px 9px 11px -5px rgba(255, 255, 255, 0.2), 0px 18px 28px 2px rgba(255, 255, 255, 0.14), 0px 7px 34px 6px rgba(255, 255, 255, 0.12);
+    --bit-shd-19: 0px 9px 12px -6px rgba(255, 255, 255, 0.2), 0px 19px 29px 2px rgba(255, 255, 255, 0.14), 0px 7px 36px 6px rgba(255, 255, 255, 0.12);
+    --bit-shd-20: 0px 10px 13px -6px rgba(255, 255, 255, 0.2), 0px 20px 31px 3px rgba(255, 255, 255, 0.14), 0px 8px 38px 7px rgba(255, 255, 255, 0.12);
+    --bit-shd-21: 0px 10px 13px -6px rgba(255, 255, 255, 0.2), 0px 21px 33px 3px rgba(255, 255, 255, 0.14), 0px 8px 40px 7px rgba(255, 255, 255, 0.12);
+    --bit-shd-22: 0px 10px 14px -6px rgba(255, 255, 255, 0.2), 0px 22px 35px 3px rgba(255, 255, 255, 0.14), 0px 8px 42px 7px rgba(255, 255, 255, 0.12);
+    --bit-shd-23: 0px 11px 14px -7px rgba(255, 255, 255, 0.2), 0px 23px 36px 3px rgba(255, 255, 255, 0.14), 0px 9px 44px 8px rgba(255, 255, 255, 0.12);
+    --bit-shd-24: 0px 11px 15px -7px rgba(255, 255, 255, 0.2), 0px 24px 38px 3px rgba(255, 255, 255, 0.14), 0px 9px 46px 8px rgba(255, 255, 255, 0.12);
+}

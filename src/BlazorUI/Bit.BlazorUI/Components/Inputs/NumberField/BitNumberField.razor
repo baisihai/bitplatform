@@ -1,0 +1,145 @@
+﻿@namespace Bit.BlazorUI
+@inherits BitTextInputBase<TValue>
+@typeparam TValue
+
+<div @ref="RootElement" @attributes="HtmlAttributes"
+     id="@_Id"
+     style="@StyleBuilder.Value"
+     class="@ClassBuilder.Value"
+     dir="@Dir?.ToString().ToLower()">
+    @if (IconName.HasValue() || Label.HasValue() || LabelTemplate is not null)
+    {
+        <div style="@Styles?.LabelContainer" class="bit-nfl-lct @Classes?.LabelContainer">
+            @if (IconName.HasValue())
+            {
+                <i style="@Styles?.Icon"
+                   class="bit-nfl-lic bit-icon bit-icon--@IconName @Classes?.Icon"
+                   role="@(IconAriaLabel.HasValue() ? "img" : null)"
+                   aria-hidden="true"
+                   aria-label="@IconAriaLabel" />
+            }
+
+            @if (LabelTemplate is not null)
+            {
+                <label id="@_labelId" for="@_inputId">
+                    @LabelTemplate
+                </label>
+            }
+            else if (Label.HasValue())
+            {
+                <label id="@_labelId"
+                       for="@_inputId"
+                       style="@Styles?.Label"
+                       class="bit-nfl-lbl @Classes?.Label">
+                    @Label
+                </label>
+            }
+        </div>
+    }
+
+    <div title="@Title"
+         style="@Styles?.InputWrapper"
+         class="bit-nfl-wrp @Classes?.InputWrapper"
+         aria-label="@AriaLabel"
+         aria-setsize="@AriaSetSize"
+         aria-posinset="@AriaPositionInSet">
+        @if (PrefixTemplate is not null)
+        {
+            @PrefixTemplate
+        }
+        else if (Prefix.HasValue())
+        {
+            <div style="@Styles?.PrefixContainer" class="bit-nfl-pre @Classes?.PrefixContainer">
+                <span style="@Styles?.Prefix" class="@Classes?.Prefix">
+                    @Prefix
+                </span>
+            </div>
+        }
+
+        <input @ref="InputElement" @attributes="@InputHtmlAttributes"
+               @onblur="HandleOnBlur"
+               @onfocus="HandleOnFocus"
+               @onkeydown="HandleOnKeyDown"
+               @onfocusin="HandleOnFocusIn"
+               @onfocusout="HandleOnFocusOut"
+               @onchange="HandleOnStringValueChangeAsync"
+               @oninput="HandleOnStringValueInputAsync"
+               form=""
+               min="@_min"
+               max="@_max"
+               name="@Name"
+               step="@_step"
+               id="@_inputId"
+               readonly="@ReadOnly"
+               required="@Required"
+               style="@Styles?.Input"
+               autofocus="@AutoFocus"
+               inputmode="@GetInputMode()"
+               placeholder="@Placeholder"
+               aria-labelledby="@_labelId"
+               value="@CurrentValueAsString"
+               disabled="@(IsEnabled is false)"
+               class="bit-nfl-inp @Classes?.Input"
+               autocomplete="@(AutoComplete ?? "off")"
+               type="@(NumberFormat.HasValue() ? "text" : "number")"
+               aria-valuemin="@_min"
+               aria-valuemax="@_max"
+               aria-describedby="@AriaDescription"
+               aria-valuenow="@(AriaValueNow ?? CurrentValue)"
+               aria-valuetext="@(AriaValueText ?? CurrentValueAsString)"
+               aria-disabled="@(IsEnabled is false)" />
+        @if (ShowButtons)
+        {
+            <span style="@Styles?.ButtonsContainer" class="bit-nfl-act @Classes?.ButtonsContainer">
+                <button @ref="_buttonIncrement"
+                        @onpointerup="HandleOnPointerUpOrOut"
+                        @onpointerout="HandleOnPointerUpOrOut"
+                        @onpointerdown="() => HandleOnPointerDown(true)"
+                        type="button"
+                        tabindex="-1"
+                        date-is-focusable="false"
+                        style="@Styles?.IncrementButton"
+                        class="bit-nfl-aup @Classes?.IncrementButton"
+                        aria-label="@IncrementAriaLabel"
+                        disabled="@(IsEnabled is false)"
+                        aria-disabled="@(IsEnabled is false)">
+                    <span style="@Styles?.IncrementIconContainer" class="bit-nfl-aic @Classes?.IncrementIconContainer">
+                        <i style="@Styles?.IncrementIcon"
+                           class="bit-nfl-bic bit-icon bit-icon--@(IncrementIconName ?? "ChevronDownSmall bit-ico-r180") @Classes?.IncrementIcon" />
+                    </span>
+                </button>
+
+                <button @ref="_buttonDecrement"
+                        @onpointerup="HandleOnPointerUpOrOut"
+                        @onpointerout="HandleOnPointerUpOrOut"
+                        @onpointerdown="() => HandleOnPointerDown(false)"
+                        type="button"
+                        tabindex="-1"
+                        date-is-focusable="false"
+                        style="@Styles?.DecrementButton"
+                        class="bit-nfl-adn @Classes?.DecrementButton"
+                        disabled="@(IsEnabled is false)"
+                        aria-label="@DecrementAriaLabel"
+                        aria-disabled="@(IsEnabled is false)">
+                    <span style="@Styles?.DecrementIconContainer" class="bit-nfl-aic @Classes?.DecrementIconContainer">
+                        <i style="@Styles?.DecrementIcon"
+                           class="bit-nfl-bic bit-icon bit-icon--@(DecrementIconName ?? "ChevronDownSmall") @Classes?.DecrementIcon" />
+                    </span>
+                </button>
+            </span>
+        }
+
+        @if (SuffixTemplate is not null)
+        {
+            @SuffixTemplate
+        }
+        else if (Suffix.HasValue())
+        {
+            <div style="@Styles?.SuffixContainer" class="bit-nfl-suf @Classes?.SuffixContainer">
+                <span style="@Styles?.Suffix" class="@Classes?.Suffix">
+                    @Suffix
+                </span>
+            </div>
+        }
+    </div>
+</div>

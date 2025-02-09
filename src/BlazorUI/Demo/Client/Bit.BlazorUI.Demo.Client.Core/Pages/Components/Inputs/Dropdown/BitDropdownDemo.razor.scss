@@ -1,0 +1,112 @@
+﻿@import '../../../../Styles/abstracts/_functions.scss';
+@import '../../../../Styles/abstracts/_media-queries.scss';
+@import '../../../../Styles/abstracts/_bit-css-variables.scss';
+
+::deep {
+    .example-content {
+        max-width: 18rem;
+    }
+
+    .custom-class {
+        margin-inline: 1rem;
+        box-shadow: dodgerblue 0 0 0.5rem;
+        text-shadow: dodgerblue 0 0 0.5rem;
+    }
+
+    .custom-fruit {
+        background-color: #a5104457;
+    }
+
+    .custom-veg {
+        background-color: #1c73324d;
+    }
+
+    .custom-callout {
+        border-radius: 1rem;
+        border-color: lightgray;
+        backdrop-filter: blur(20px);
+        background-color: transparent;
+        box-shadow: darkgray 0 0 0.5rem;
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .custom-container,
+    .custom-container:after {
+        border-radius: 1rem;
+    }
+
+    .custom-item-button {
+        border-bottom: 1px solid gray;
+    }
+
+    .custom-item-button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .custom-scroll-container {
+        div:last-child {
+            .custom-item-button {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .validation-message {
+        font-size: rem2(12px);
+        color: $bit-color-requried;
+    }
+
+    .custom-drp {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+
+        &.custom-drp-lbl {
+            color: dodgerblue;
+        }
+
+        &.custom-drp-txt {
+            color: goldenrod;
+        }
+
+        &.custom-drp-ph {
+            color: orangered;
+        }
+
+        &.custom-drp-item {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        &.custom-drp-header {
+            width: 100%;
+            padding: 5px 12px;
+            color: #ff4600;
+            font-weight: bold;
+        }
+    }
+
+    .grid-wrap {
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: auto auto;
+
+        .cascading-dropdowns-info {
+            gap: 3rem;
+            display: flex;
+            flex-flow: column;
+            padding-top: 2rem;
+        }
+
+        @include sm {
+            display: block;
+            grid-template-columns: none;
+
+            .cascading-dropdowns-info {
+                gap: 0;
+            }
+        }
+    }
+}
